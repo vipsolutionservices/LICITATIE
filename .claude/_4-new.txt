@@ -1,0 +1,89 @@
+
+## 4. Descrierea soluției propuse
+
+
+### 4.1 Viziunea de ansamblu
+
+
+### 4.2 Componentele funcționale ale sistemului
+
+
+#### 4.2.1 LIMS — Sistem informatic de laborator (cap. 3.4.2.1, 3.4.3.3.3)
+
+
+#### 4.2.2 DMS — Sistem național de management documente (cap. 3.4.2.2, 3.4.3.3.1)
+
+
+#### 4.2.3 Management scheme de intercomparare (cap. 3.4.2.3)
+
+
+#### 4.2.4 GIS — Sistem geo-informațional (cap. 3.4.2.4, 3.4.3.2.8)
+
+
+#### 4.2.5 Culegere date, raportare, dashboard și sinteze (cap. 3.4.2.5)
+
+
+#### 4.2.6 Portal Servicii Publice către cetățeni, societăți comerciale și medici veterinari (cap. 3.4.2.6, 3.4.3.3.2)
+
+
+#### 4.2.7 BND-SNIIA — Baza Națională de Date a Sistemului Național de Identificare și Înregistrare a Animalelor (cap. 3.4.2.7)
+
+
+#### 4.2.8 Catagrafie și cartografiere exploatații, unități autorizate, farmacii (cap. 3.4.2.8)
+
+
+#### 4.2.9 Supraveghere, prevenire, control și anchete (cap. 3.4.2.9)
+
+
+#### 4.2.10 Management instruire personal laboratoare (cap. 3.4.2.10)
+
+
+#### 4.2.11 Aplicație mobilă de raportare animale sălbatice bolnave sau decedate (cap. 3.4.2.11)
+
+
+#### 4.2.12 Autorizare, acreditare și desemnare (cap. 3.4.2.12)
+
+
+#### 4.2.13 Contorizare folosire servicii publice (cap. 3.4.2.13, indicator POCIDIF RCR11)
+
+
+#### 4.2.14 Integrări externe și preluări de date (cap. 3.4.2.14)
+
+
+### 4.3 Maparea componente → produse software (sinteză)
+
+
+### 4.4 Caracteristici transversale ale soluției
+
+
+#### 4.4.1 Arhitectură Cloud-Native (cap. 3.4.1.1)
+
+
+#### 4.4.2 Identitate și acces (cap. 3.4.3.2.7, 3.4.5)
+
+
+#### 4.4.3 Semnătură electronică și audit
+
+
+#### 4.4.4 Interoperabilitate (cap. 3.4.3.2.9, 3.4.2.14)
+
+
+#### 4.4.5 Lucru offline și sincronizare (cerință DEMO eliminatorie)
+
+
+#### 4.4.6 Securitate informatică (cap. 3.4.1.2, 3.4.1.3, 3.4.6)
+
+
+#### 4.4.7 Confidențialitatea datelor (cap. 3.4.7)
+
+
+#### 4.4.8 Accesibilitate (cap. 3.4.2.6)
+
+
+#### 4.4.9 Căutare și indexare
+
+
+### 4.5 Conformitate legală și standarde aplicabile
+
+
+### 4.6 Drepturi de proprietate intelectuală asupra rezultatelor (cap. 12)

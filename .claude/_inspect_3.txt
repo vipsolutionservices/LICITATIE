@@ -1,0 +1,76 @@
+
+## 3. Planul de implementare
+
+Capitolul prezintă planul detaliat de implementare a sistemului SIDISVA propus de VOGO TECHNOLOGY. Durata totală a etapei de implementare este de 18 luni de la data semnării contractului (cf. cap. 6 din Caietul de Sarcini), fără a depăși data limită de finalizare a proiectului — 21.05.2027. Garanția acoperă suplimentar 36 luni post-recepție finală, totalizând astfel 54 de luni de angajament VOGO TECHNOLOGY față de ANSVSA.
+
+### 3.1 Etapele majore și calendarul
+
+Planificarea proiectului utilizează metoda iterativă și continuă a planificării conform PMBoK: activitățile din perioada imediat următoare sunt planificate detaliat (rolling wave planning), iar fazele de proiect mai îndepărtate sunt planificate la un nivel agregat, urmând să fie detaliate la momentul apropierii lor.
+
+[TABLE]
+| # | Etapă | Start | Sfârșit | Durată | Livrabile principale |
+| 1 | Inițierea proiectului | L1 | L1 | 1 lună | PID, Plan detaliat, Registru riscuri, Kick-off minute |
+| 2 | Analiza detaliată a cerințelor | L2 | L3 | 2 luni | SRS, BPMN, Matrice trasabilitate, Use-Case-uri UML |
+| 3 | Proiectare arhitectură și UX | L4 | L5 | 2 luni | HLD/LLD, Schema BD, Mockup-uri, API contracts |
+| 4 | Dezvoltare iterativă (Scrum sprints) | L6 | L13 | 8 luni | Module funcționale livrate iterativ, demo bi-săptămânale |
+| 5 | Achiziție și instalare hardware + cloud | L4 | L8 | 5 luni | Infrastructura HW + cloud privat operațional |
+| 6 | Integrări externe | L8 | L13 | 6 luni | ROeID, ONRC, ANCPI, HL7, APIA, ANARZ — certificate funcțional |
+| 7 | Testare integrată end-to-end | L14 | L15 | 2 luni | Rapoarte testare, validare ANSVSA |
+| 8 | Pen-testing și acceptare securitate | L15 | L15 | 1 lună | Raport pen-test independent, certificat securitate |
+| 9 | Implementare în producție (go-live) | L16 | L16 | 1 lună | Sistem operațional, PV recepție |
+| 10 | Hypercare post-go-live | L16 | L17 | 2 luni | Stabilizare sistem, bug rate scăzut |
+| 11 | Instruire utilizatori | L17 | L18 | 2 luni | Utilizatori formați + certificate |
+| 12 | Recepție finală | L18 | L18 | 1 lună | PV recepție finală + start garanție 3 ani |
+[/TABLE]
+
+Diagrama Gantt detaliată cu dependențe, drumul critic și termenele de feedback/aprobare din partea Autorității Contractante va fi inclusă în Anexa D a prezentei oferte, în format Microsoft Project + export PDF.
+
+### 3.2 Drumul critic
+
+VOGO TECHNOLOGY identifică următoarele activități pe drumul critic (orice întârziere afectează direct livrarea finală):
+Aprobarea SRS de către ANSVSA (sfârșit L3) — punct fix de planificare a dezvoltării;
+Furnizarea hardware-ului de la producători (L4-L8) — riscuri de supply chain mitigate prin selecție producători cu stoc local și parteneriate VOGO TECHNOLOGY existente;
+Validarea integrărilor externe — ROeID, ANCPI etc. (L8-L13) — depinde de disponibilitatea sistemelor partenere; mitigare prin start anticipat al negocierii acordurilor inter-instituționale;
+Pen-testing și remedierile (L15) — buffer planificat de 2 săptămâni;
+Migrarea datelor legacy (L16) — sub rezerva existenței datelor de calitate în sistemele actuale ANSVSA.
+
+### 3.3 Managementul riscurilor
+
+Principalele riscuri identificate și măsurile de mitigare VOGO TECHNOLOGY:
+
+[TABLE]
+| Risc identificat | Probabilitate | Impact | Plan de mitigare VOGO TECHNOLOGY |
+| Întârzieri în obținerea acordurilor inter-instituționale (ROeID, ONRC etc.) | Medie | Mare | Start anticipat negocieri în L1; arhitectură decuplată permite testare module independent; backup pe API-uri de test |
+| Supply chain hardware (chipuri, echipamente specializate) | Medie | Mare | Comandă early-stage cu 2 producători alternativi; stoc-buffer local; parteneriate stabilite |
+| Modificări legislative pe parcursul implementării | Medie | Mediu | Monitorizare legislativă lunară; arhitectură modulară permite ajustări rapide; rezervă schimbări în plan |
+| Indisponibilitatea utilizatorilor cheie ANSVSA pentru workshop-uri | Mare | Mediu | Planificare în avans; sesiuni asincrone (chestionare); backup în experți ANSVSA secundari |
+| Resistance to change la utilizatori finali | Mare | Mediu | Implicare timpurie în design (UX research); program change management; campanie internă |
+| Bug-uri majore detectate târziu (testare integrată) | Mică | Mare | Testare continuă (TDD, CI/CD); automatizare 80% test cases; security testing săptămânal |
+| Pierdere experți cheie din echipă | Mică | Mare | Knowledge sharing obligatoriu; documentație tehnică actualizată; rezerve VOGO pe fiecare rol |
+| Atacuri cibernetice pe sistem în producție | Mare | Mare | Pen-testing pre-launch; monitorizare 24×7 SIEM; plan IR; exerciții red-team semestriale |
+[/TABLE]
+
+
+### 3.4 Paralelizarea activităților de implementare
+
+Pentru reducerea duratei totale și optimizarea utilizării resurselor, VOGO TECHNOLOGY aplică următoarele tehnici de paralelizare:
+Dezvoltare în Scrum cu multiple echipe — LIMS, DMS, Portal, GIS, Integrări, Securitate lucrează în paralel pe sprint-uri sincronizate;
+Achiziția hardware începe în L4 (înainte de finalizarea dezvoltării) pentru a evita drumul critic;
+Integrările externe încep în L8 (când stack-ul de bază e stabil) și rulează în paralel cu dezvoltarea;
+Instruirea utilizatorilor cheie începe în L17 — în paralel cu hypercare, nu secvențial după;
+Pregătirea documentației tehnice rulează continuu pe toată durata dezvoltării (documentation-as-code).
+
+### 3.5 Procedura de acceptanță
+
+Procedura de acceptanță VOGO TECHNOLOGY garantează că fiecare livrabil — fie sistem informatic, fie document — trece printr-un proces formal de validare:
+Premise — livrabilul este complet și verificat intern de VOGO TECHNOLOGY (Quality Assurance internă);
+Predare formală către ANSVSA — cu document de predare semnat electronic, anexat la registrul proiectului;
+Perioadă de evaluare — durata stabilită în Planul de Acceptanță (tipic 5-15 zile lucrătoare);
+Decizia ANSVSA — Acceptare, Acceptare cu observații, sau Respingere cu motivare;
+Pentru livrabile de tip sistem: testare UAT pe scenarii agreate, semnătură pe Procesul-verbal de testare;
+Pentru livrabile de tip document: revizie de conținut, semnătură pe PV de predare-primire;
+Închiderea formală — Procesul-Verbal de Recepție semnat de ambele părți.
+
+### 3.6 Mentenanța sistemului post-implementare
+
+Mentenanța sistemului va fi asigurată de VOGO TECHNOLOGY pe o perioadă de 3 ani de la data punerii în funcțiune, respectând toate cerințele din Caietul de Sarcini. Detaliile complete privind procedura de suport tehnic, SLA-urile și echipele alocate se regăsesc în capitolul 7 (Plan de garanție).

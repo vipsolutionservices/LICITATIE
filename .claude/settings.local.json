@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git mv *)",
+      "Bash(python -c \"import docx; print\\('python-docx OK'\\)\")",
+      "Bash(where pandoc *)",
+      "Bash(pandoc --version)",
+      "Bash(pip --version)",
+      "Bash(pip install *)",
+      "Bash(python *)",
+      "Bash(grep -i \"^~\\\\$\\\\|lock\")",
+      "Bash(where pwsh *)",
+      "Bash(where powershell *)",
+      "PowerShell($e = [char]27; [Console]::Write\\(\"$e]0;SIDISVA - test titlu$\\([char]7\\)\"\\); \"title set to: 'SIDISVA - test titlu'\")",
+      "PowerShell(& \"${PWD}\\\\.claude\\\\register_alias.ps1\" -Alias A3)",
+      "Bash(pwsh -NoProfile -ExecutionPolicy Bypass -File \".claude/register_alias.ps1\" -Alias A1)",
+      "Bash(grep -E \"~\\\\\\\\\\\\$|4-Descrierea\")",
+      "PowerShell(Get-ChildItem -Path .claude -Force -Recurse -File | Where-Object { $_.LastWriteTime -gt \\(Get-Date\\).AddMinutes\\(-30\\) } | Sort-Object LastWriteTime -Descending | Select-Object @{N='Path';E={$_.FullName.Replace\\(\\(Get-Location\\).Path + '\\\\',''\\)}}, @{N='Modified';E={$_.LastWriteTime.ToString\\('HH:mm:ss'\\)}}, @{N='KB';E={[math]::Round\\($_.Length/1KB,2\\)}} | Format-Table -AutoSize)",
+      "Bash(grep -E \"~\\\\\\\\\\\\$1-Rez\")",
+      "Bash(grep -E \"~\\\\\\\\\\\\$13-Mana\")"
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "pwsh -NoProfile -ExecutionPolicy Bypass -File \"${CLAUDE_PROJECT_DIR}\\.claude\\statusline.ps1\""
+  }
+}

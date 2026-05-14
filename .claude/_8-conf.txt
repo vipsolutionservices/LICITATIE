@@ -1,0 +1,33 @@
+
+## 8. Conformitate cu specificațiile tehnice
+
+Capitolul răspunde la cerința IV.4.1 lit. e) din Fișa de date. Răspunsuri de tip „OK" / „100%" / „Soluția răspunde la cerință" NU sunt acceptate. Trimiterile doar la hyperlink-uri NU sunt acceptate. VOGO TECHNOLOGY răspunde la fiecare cerință cu detalii concrete despre modul de îndeplinire, tehnologia folosită, capacitatea oferită și documentele justificative anexate.
+
+### 8.1 Reguli formale de redactare a răspunsurilor
+
+Fiecare cerință din Caietul de Sarcini primește un răspuns detaliat;
+Răspunsul indică concret modul în care cerința este sau va fi îndeplinită (tehnologie, configurație, capacitate, dovadă);
+Pentru fiecare răspuns sunt indicate: documentul anexă, pagina, paragraful relevant;
+Trimiterile către documente de la producători sunt însoțite de citarea textului concret (nu doar URL);
+Nu se admit răspunsuri prin simpla repetare a cerinței (cu schimbarea timpului verbal);
+Răspunsurile sunt asertive — formulări tip „VOGO ENTERPRISE BUSINESS SUITE asigură…", „Soluția VOGO TECHNOLOGY răspunde la cerință prin…".
+
+### 8.2 Tabel sintetic de conformitate (extras reprezentativ)
+
+Tabelul de mai jos este un extras reprezentativ. Versiunea completă, structurată identic, este prezentată în Anexa F — Matricea de Conformitate, conținând toate cele 1.294 cerințe extrase din Caietul de Sarcini.
+
+[TABLE]
+| Cap. caiet | Cerință (citat scurt) | Mod îndeplinire VOGO TECHNOLOGY | Document referință |
+| 3.4.1.1 | Sistem Cloud-Native găzduit în Cloud Guvernamental, compatibil cu containerizare | VOGO ENTERPRISE BUSINESS SUITE este implementat ca microservicii în containere Docker, orchestrate prin Kubernetes/OpenShift, găzduit în Cloud Privat conform OUG 89/2022. Compatibilă cu serviciile S3 și BD manage ale Cloud Guvernamental. | Cap. 5.1, 5.2 ofertă; Anexa C |
+| 3.4.1.2 | Prevederi securitate cibernetică — Legea 362/2018 | Sistem certificat ISO 27001, defense-in-depth pe 7 nivele (cap. 10 ofertă), audit anual pen-test, conformitate L 362/2018 art. 12-15 prin SIEM 24×7 și plan IR. | Cap. 10 ofertă; Anexa H |
+| 3.4.2.1 | Funcționalități LIMS — gestiune cereri analiză, fluxuri laborator | Modul LIMS dedicat (cap. 4.2.1 ofertă) cu workflow primire→distribuție→analiză→validare→eliberare; integrare echipamente prin IoT (126 buc); HL7 FHIR pentru schimburi externe. | Cap. 4.2.1; Anexa specificații LIMS |
+| 3.4.2.6 | Portal Servicii Publice — minim 56 servicii electronice | Catalog complet 56+ servicii (cap. 4.2.3 ofertă); autentificare ROeID/eIDAS; plăți online integrate; accesibilitate WCAG 2.1 AA. | Cap. 4.2.3; Anexa wireframes |
+| 3.4.3.4.1.1 | WAF appliance virtual — 8 vCPU, 3 Gbps HTTP, 64 domenii | WAF [Producător] versiune [X], appliance virtual deployabil pe VMware/Hyper-V/KVM, HA cu 8 vCPU + 16GB RAM, throughput certificat 3 Gbps HTTP, ≥64 domenii admin. | Anexa B item 1; fișa tehnică [link] |
+| 3.4.3.4.x | Laptop — consum redus DNSH (max 20Wh veghe) | Laptop [Producător/Model] certificat EnergyStar 8.0 + EU Ecolabel, consum măsurat [X] Wh < 20 Wh; 100 buc pentru ANSVSA. | Anexa B item 12; raport test |
+| … | [Continuat în Anexa F — toate cele 1.294 cerințe extrase] | Răspuns detaliat per cerință | Anexa F |
+[/TABLE]
+
+
+### 8.3 Trasabilitate cerințe → soluție
+
+Trasabilitatea cerințelor pe traseul Caiet de Sarcini → Ofertă Tehnică → Document de Analiză → Scenarii de Testare → Recepție Finală este asigurată de VOGO TECHNOLOGY prin Matricea de Trasabilitate a Cerințelor (RTM) — instrument central al managementului calității proiectului. Această matrice permite ANSVSA să verifice oricând, în orice etapă a proiectului, modul în care fiecare cerință din Caietul de Sarcini este îndeplinită concret.

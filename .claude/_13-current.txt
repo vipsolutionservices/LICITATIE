@@ -1,0 +1,47 @@
+
+## 13. Managementul contractului
+
+Capitolul descrie modul în care VOGO TECHNOLOGY va gestiona contractul SIDISVA pe toată durata de 18+36 luni — proceduri de guvernare, instrumente, raportare, gestionare drepturi de proprietate intelectuală și relația cu Autoritatea Contractantă.
+
+### 13.1 Procese de guvernare
+
+Comitet de Direcție (Steering Committee): se reunește lunar, validează deciziile majore, aprobă schimbări scop/timp/buget; format din Sponsor VOGO + reprezentanți ANSVSA la nivel director;
+Comitet operațional: săptămânal, urmărește livrabilele, riscurile, blocajele; format din PM VOGO + PM ANSVSA + lead-uri tehnice;
+Stand-up zilnic intern echipă — sincronizare operațională VOGO TECHNOLOGY;
+Sprint review cu ANSVSA la 2 săptămâni — demonstrarea livrabilelor incrementale;
+Quarterly Business Review — analiza de fond a stadiului proiectului, ajustări strategice.
+
+### 13.2 Instrumente de management
+
+Project management: Microsoft Project + Jira (tracking issues + sprint-uri);
+Documentation: Confluence + Microsoft SharePoint;
+Code repository: GitLab self-hosted / Azure DevOps;
+CI/CD: GitLab CI / Jenkins / Azure Pipelines;
+Communication: Microsoft Teams / Slack canal dedicat ANSVSA-VOGO;
+Monitoring: Prometheus + Grafana + ELK Stack;
+Ticketing suport: Jira Service Management / ServiceNow.
+
+### 13.3 Raportare către ANSVSA
+
+VOGO TECHNOLOGY asigură raportare structurată și transparentă către ANSVSA pe toată durata contractului:
+Raport săptămânal de progres (Status Report) — activități, livrabile, blocaje, riscuri;
+Raport lunar (Dashboard cu KPI-uri) — % livrabile completate, riscuri, buget utilizat, timeline;
+Raport la fiecare milestone major — analiză de fond, lessons learned, recomandări;
+Raport final la închiderea proiectului — sinteza proiectului, transfer cunoștințe;
+Rapoarte ad-hoc la solicitarea ANSVSA — orice subiect, în maxim 5 zile lucrătoare.
+
+### 13.4 Drepturile de proprietate intelectuală
+
+Conform cap. 12 din Caietul de Sarcini, drepturile de proprietate intelectuală asupra livrabilelor specifice contractului SIDISVA (cod sursă custom dezvoltat, documentație, configurări) sunt transferate integral Autorității Contractante. VOGO TECHNOLOGY garantează:
+Codul sursă custom dezvoltat pentru specificul SIDISVA este predat ANSVSA în repozitar Git (cu istoric complet);
+Documentația tehnică completă (arhitectură, API specs, deployment guides) este transferată ANSVSA;
+Pentru produsul VOGO ENTERPRISE BUSINESS SUITE — licență de site perpetuă, fără limitare de utilizatori sau funcționalități;
+Pentru componente terțe (software COTS, librării open-source) — sunt asigurate licențe corespunzătoare conform descrierii din Anexa A — Lista licențelor.
+
+### 13.5 Managementul subcontractării [PARTENER]
+
+Relația VOGO TECHNOLOGY — [PARTENER] este reglementată prin Acordul de Subcontractare (Anexa K). VOGO TECHNOLOGY rămâne unic responsabil contractual față de ANSVSA, asigurând:
+Punct unic de contact pentru ANSVSA (PM VOGO TECHNOLOGY);
+Integrare completă a activităților [PARTENER] în planul de proiect;
+Standardele de calitate și raportare VOGO se aplică și activităților [PARTENER];
+Răspunderea solidară pentru livrabile și termene.

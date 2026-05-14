@@ -1,0 +1,47 @@
+
+## 11. Măsuri de respectare a principiului DNSH
+
+Capitolul răspunde la Factorul de evaluare nr. 4 — Măsuri DNSH (10 puncte total). VOGO TECHNOLOGY țintește punctajul maxim pe ambii subfactori (5+5 = 10 puncte), prin alegeri tehnice și logistice concrete, măsurabile și documentate.
+
+### 11.1 Cadrul DNSH (Do No Significant Harm)
+
+Principiul DNSH, instituit prin Regulamentul (UE) 2020/852 (Taxonomy Regulation), impune ca activitățile finanțate din fonduri europene să nu aducă prejudicii semnificative niciunuia dintre cele 6 obiective de mediu:
+Atenuarea schimbărilor climatice;
+Adaptarea la schimbările climatice;
+Utilizarea durabilă și protecția resurselor de apă și marine;
+Tranziția la o economie circulară;
+Prevenirea și controlul poluării;
+Protecția și restaurarea biodiversității și a ecosistemelor.
+
+### 11.2 Subfactor 4.1 — Consum energie laptop în modul veghe (5 puncte)
+
+Cerința minimă obligatorie din Caietul de Sarcini: laptopurile ofertate trebuie să aibă un consum în modul veghe de maxim 20 Wh. Peste 20 Wh = ofertă neconformă. Algoritmul de punctaj: cel mai mic consum dintre ofertanți = 5 puncte; pentru alte consumuri: P(n) = (Cmin / Cn) × 5 puncte.
+Strategia VOGO TECHNOLOGY:
+Ofertăm 100 laptop-uri model [Producător/Model] cu consum în modul veghe de [X] Wh — semnificativ sub plafonul de 20 Wh;
+Modelul deține certificare EnergyStar 8.0 + EU Ecolabel — conform Decizia (UE) 2020/1804 a Comisiei;
+Documente justificative anexate: fișa tehnică oficială producător + raport de testare independent.
+
+### 11.3 Subfactor 4.2 — Reducere amprentă carbon (livrare + ambalare) — 5 puncte
+
+Algoritmul de punctaj: 0 puncte — nicio măsură concretă; 2 puncte — ambalaje reciclabile/reutilizabile fără alte măsuri; 5 puncte — ambalaje reciclabile + livrare cu mijloace cu emisii reduse.
+Măsurile concrete VOGO TECHNOLOGY (5 puncte țintite):
+Ambalare: 100% materiale reciclabile certificate FSC (carton + folie biodegradabilă), eliminarea polistirenului expandat;
+Consolidare livrări: gruparea echipamentelor pe DSVSA pentru maximizarea load factor;
+Optimizare trasee: software de planificare logistică pentru minimizarea km parcurși (cu certificat de la furnizorul logistic);
+Vehicule electrice/hibride pentru livrările intra-urbane (București + capitale județene principale);
+Compensare emisiilor reziduale prin program de plantare pomi (cu certificat de carbon offset);
+Documente justificative: contract cu furnizor logistic care detaliază măsurile + certificate ambalare reciclabilă + raport amprentă carbon estimată.
+
+### 11.4 Declarația DNSH
+
+VOGO TECHNOLOGY se angajează prin Declarația DNSH (anexată ofertei) că toate echipamentele și serviciile ofertate respectă integral principiul Do No Significant Harm pe toate cele 6 obiective de mediu, în spiritul Regulamentului (UE) 2020/852 și al condițiilor specifice PoCIDIF.
+
+### 11.5 Documente justificative DNSH (Anexa I)
+
+Fișa tehnică oficială a laptop-urilor ofertate (consum modul veghe);
+Certificat EnergyStar 8.0 + EU Ecolabel pentru laptop-uri;
+Raport de testare independent al consumului;
+Certificat materiale ambalare reciclabile (FSC);
+Contract cu furnizor logistic detaliind măsurile DNSH;
+Raport amprentă carbon estimată pentru întregul lot de livrare;
+Certificat carbon offset (compensare emisiilor reziduale).

@@ -1,0 +1,124 @@
+
+## 4. Descrierea soluției propuse
+
+Soluția ofertată este VOGO ENTERPRISE BUSINESS SUITE — soluție de top în ceea ce privește digitalizarea proceselor în România, dezvoltată integral de VOGO TECHNOLOGY și înregistrată la OSIM (RO) și EUIPO (marcă UE nr. 019103505). Capitolul răspunde la cerința IV.4.1 lit. a) din Fișa de date a achiziției — descrierea soluției propuse pentru îndeplinirea obiectivelor stabilite prin Caietul de Sarcini.
+
+### 4.1 Viziune generală asupra soluției SIDISVA
+
+Soluția SIDISVA propusă de VOGO TECHNOLOGY este un sistem informatic Cloud-Native, modular, scalabil, găzduit într-un cloud privat conform OUG nr. 89/2022, integrat în ecosistemul Cloud Guvernamental al României. Sistemul este construit pe principiul arhitecturii bazate pe servicii (SOA / microservicii), cu o platformă comună de servicii partajate (autentificare, autorizare, audit, notificări, integrări) și module funcționale specializate pentru fiecare domeniu de activitate ANSVSA.
+Soluția pune accentul pe armonizarea activităților interne ale ANSVSA cu activitățile externe ale acesteia, oferind un punct unic de adevăr (single source of truth) pentru întreaga rețea sanitar-veterinară națională:
+Servicii publice digitale către cetățeni, medici veterinari și operatori economici (≥185.000 utilizatori unici anual);
+Fluxuri interne digitalizate pentru cele 46 instituții (ANSVSA centru + 42 DSVSA + 3 institute);
+Interoperabilitate nativă cu ecosistemul național și european (ROeID, eIDAS, ONRC, APIA, ANCPI, ANARZ, PNI, PDURo etc.);
+Conformitate completă cu indicatorul RCR11 PoCIDIF — ≥56 servicii electronice publice noi/optimizate.
+Soluția acoperă în mod integral cele 14 module funcționale solicitate prin Caietul de Sarcini, cap. 3.4.2, descrise în detaliu mai jos.
+
+### 4.2 Modulele funcționale ale sistemului
+
+
+#### 4.2.1 Modul LIMS — Sistem informatic de laborator
+
+Modulul LIMS (Laboratory Information Management System) al VOGO ENTERPRISE BUSINESS SUITE gestionează întregul ciclu de viață al activității de laborator în cele 3 institute ANSVSA și în laboratoarele județene. Funcționalități principale:
+Înregistrarea cererilor de analiză (din portal sau introduse direct);
+Generarea automată a codurilor unice pentru eșantioane (cu cod de bare/QR);
+Workflow tehnic: primire eșantion → distribuție pe sectoare → execuție analiză → validare → eliberare buletin;
+Integrare cu echipamentele de laborator (LIS interface, dispozitive IoT — 126 buc, 3 per institut);
+Generarea automată a buletinelor de analiză cu semnătură digitală calificată eIDAS;
+Trasabilitate completă (lanț de custodie) — cine a manipulat eșantionul, când, ce a făcut;
+Interoperabilitate HL7 FHIR pentru schimb de date cu sisteme medicale și veterinare externe;
+Modul de management al schemelor de intercomparare (PT — Proficiency Testing) între laboratoare.
+
+#### 4.2.2 Modul DMS — Management documente
+
+Componenta DMS a VOGO ENTERPRISE BUSINESS SUITE reprezintă coloana vertebrală pentru gestionarea fluxurilor documentare ANSVSA. Componenta include 7 sub-module conform cap. 3.4.3.3.1:
+Modul de gestionare a documentelor — captură, indexare, versionare, arhivare;
+Modul Captură — preluare documente din surse multiple (scan, email, portal, OCR automat);
+Modul Registru electronic — înregistrare și numerotare automată conformă cu Legea Arhivelor;
+Modul fluxuri de lucru (BPMN engine) — workflow-uri configurabile pentru aprobări, validări, distribuiri, fără modificarea codului sursă;
+Modul Raportare — rapoarte standard și ad-hoc, dashboard-uri operaționale;
+Modul de administrare — utilizatori, roluri, permisiuni granulare, configurări fluxuri;
+Modul de ajutor — documentație contextuală, tutoriale interactive.
+Toate documentele pot fi semnate cu semnătură electronică calificată (eIDAS), conform Legii nr. 455/2001 și Regulamentului (UE) 910/2014. VOGO ENTERPRISE BUSINESS SUITE integrează nativ semnătura olografă captată electronic și semnătura biometrică, oferind opțiuni complete de validare juridică a documentelor.
+
+#### 4.2.3 Modul Portal Servicii Publice
+
+Portalul de Servicii Publice este interfața principală cu cetățenii, medicii veterinari și societățile comerciale:
+Catalog complet de servicii publice (≥56 servicii, conform indicator RCR11 PoCIDIF);
+Autentificare prin ROeID/eIDAS pentru cetățenii români și ai UE;
+Spațiu personal („My ANSVSA") cu istoricul interacțiunilor, cererilor depuse, statutul acestora;
+Plăți online integrate (cf. Legii nr. 207/2015, OUG 41/2016);
+Notificări multi-canal (email, SMS, push notifications mobile);
+Aplicație mobilă nativă (iOS + Android) — conform cap. 3.4.3.3.2.2;
+Conformitate WCAG 2.1 AA (accesibilitate).
+
+#### 4.2.4 Modul GIS — Catagrafie și cartografiere
+
+Modulul GIS asigură cartografierea exploatațiilor, unităților autorizate, farmaciilor veterinare și altor obiective de interes ANSVSA. Funcționalități:
+Layer-uri tematice configurabile (exploatații zootehnice, abatoare, farmacii, depozite etc.);
+Integrare cu cartografia națională (ANCPI — eTerra) și INSPIRE;
+Geolocalizare automată din introduceri adrese (geocoding);
+Suport pentru rute optimizate pentru echipele de control teren (336 complete echipe teren);
+Hărți tematice pentru analiza epidemiologică (hot-spots, zone de risc);
+Vizualizare 2D + 3D, exporturi în formate standard (GeoJSON, KML, Shapefile).
+
+#### 4.2.5 Modul Registratură electronică
+
+Modul de înregistrare a corespondenței interne și externe conform Legii nr. 16/1996 (Arhivelor) și Legii nr. 161/2003 — numerotare automată, indexare, fluxuri de aprobare configurabile.
+
+#### 4.2.6 Modul Arhivă fizică
+
+Gestionarea arhivei fizice de documente: localizare, inventariere, împrumut, retur, casare conform termenelor legale.
+
+#### 4.2.7 Modul Control Managerial Intern (SCIM)
+
+Modulul SCIM asigură conformitatea ANSVSA cu OSGG nr. 600/2018 — Codul controlului intern managerial: identificare riscuri, registru de riscuri, plan măsuri, raportare obiective.
+
+#### 4.2.8 Modul Inspecții și Control Veterinar
+
+Planificarea și executarea controalelor în teren, cu suport pentru aplicația mobilă (offline-first), generare procese verbale, sancțiuni și recomandări.
+
+#### 4.2.9 Modul Autorizări și Înregistrări
+
+Procese complete pentru autorizarea unităților din domeniul sanitar-veterinar: cerere, evaluare, decizie, emitere autorizație cu semnătură digitală, urmărire valabilitate.
+
+#### 4.2.10 Modul Notificări și Alertă Sanitară
+
+Mecanisme de alertă rapidă pentru evenimente sanitar-veterinare critice (boli infecțioase, contaminări alimentare): notificări multi-canal, integrare cu sistemul european RASFF.
+
+#### 4.2.11 Modul Trasabilitate Alimentară
+
+Trasabilitate end-to-end pe lanțul alimentar — de la fermă la consumator, conform Regulamentului (CE) 178/2002.
+
+#### 4.2.12 Modul Identificare și Registrare Animale
+
+Integrare nativă cu BND-SNIIA (Baza Națională de Date — Sistemul Național de Identificare și Înregistrare a Animalelor), import/export date, validări automate.
+
+#### 4.2.13 Modul Statistici și Business Intelligence
+
+Dashboard-uri executive și operaționale, KPI-uri configurabile, drill-down, exporturi avansate, integrare cu instrumente BI de top.
+
+#### 4.2.14 Modul Administrare și Configurare Sistem
+
+Administrarea integrală a sistemului — utilizatori, roluri, permisiuni, configurări fluxuri, parametri sistem, backup, monitoring.
+
+### 4.3 Caracteristici transversale ale soluției
+
+VOGO ENTERPRISE BUSINESS SUITE oferă următoarele facilități transversale, disponibile în toate cele 14 module:
+Căutare full-text — indexare prin Elasticsearch (inclusiv fuzzy search), pentru toate fișierele încărcate (imagini cu OCR, documente Office, PDF, email-uri);
+Logging și audit complet — fiecare entitate din baza de date deține mecanism de log și audit pentru păstrarea istoricului activităților;
+Lucru off-line — utilitar de sincronizare pentru utilizatorii de teren și pentru rezolvarea problemelor de conectivitate;
+Integrare cu Microsoft Office și Windows Explorer prin plugin-uri dedicate;
+Gestiune utilizatori sincronizată cu Active Directory / Azure AD / LDAP;
+Portal extern integrat — comunicare bidirectională cu utilizatorii externi (cetățeni, mediul de afaceri);
+Multi-limbă — română, engleză, opțional alte limbi UE.
+
+### 4.4 Avantaje competitive esențiale ale soluției propuse
+
+În raport cu cerințele identificate de Autoritatea Contractantă în Caietul de Sarcini, dorim să punctăm următoarele avantaje competitive ale VOGO ENTERPRISE BUSINESS SUITE:
+Soluție dezvoltată complet în România de informaticieni români, în corelație totală cu cerințele legislative și de business naționale, respectând normele europene și standardele internaționale. Nu este o soluție externă adaptată — este construită pentru aceste cerințe.
+Înregistrată la OSIM (RO) și EUIPO (marcă UE nr. 019103505) — atestat juridic al proprietății intelectuale și al maturității produsului.
+Referințe demonstrabile în implementări complexe în instituții publice și companii private (vezi Anexa E).
+Disponibilitate completă a resurselor în România — Producător + Integrator în aceeași echipă, fără dependențe externe.
+Tehnologii de top — Oracle, Microsoft SQL Server, PostgreSQL, MySQL — adaptându-ne la standardele existente la ANSVSA.
+Integrare nativă cu Cloud Guvernamental, ROeID, eIDAS, HL7 FHIR — fără riscuri de integrare târzie.
+Garanție extinsă 3 ani + suport tehnic 24×7 cu SLA strict (timp răspuns ≤1 oră incidente critice).

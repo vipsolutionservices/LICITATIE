@@ -1,0 +1,29 @@
+
+## 15. Declarații obligatorii
+
+Capitolul prezintă lista declarațiilor obligatorii anexate ofertei tehnice depuse de VOGO TECHNOLOGY S.R.L. pentru contractul SIDISVA. Toate declarațiile sunt semnate electronic calificat de reprezentantul legal al ofertantului și sunt anexate în Anexa K — Pachet declarații.
+
+### 15.1 Lista declarațiilor anexate
+
+Declarație privind conflictul de interese (art. 60 L 98/2016);
+Declarație privind respectarea legislației de mediu, social și a relațiilor de muncă (cf. IV.4.1 Fișa de date);
+Declarație privind aplicarea principiului DNSH;
+Declarație privind părțile confidențiale ale ofertei (cf. art. 57 alin. 4 L 98/2016 — cu justificare per item, NU declarație generică);
+Declarație de asumare a condițiilor din documentația de atribuire;
+Declarație de disponibilitate pentru fiecare expert din echipa propusă.
+
+### 15.2 Documente conexe (acorduri și împuterniciri)
+
+Acord de asociere (dacă oferta este depusă de o asociere) — semnat electronic de toți membrii;
+Acord de subcontractare cu [PARTENER] (cu detalierea procentajului și activităților) — aplicabil în prezenta procedură;
+Angajament ferm al terțului susținător (dacă este cazul, pentru capacitate financiară/tehnică);
+Împuterniciri de la fiecare membru asociere pentru semnatarul ofertei.
+
+### 15.3 Garanție de participare
+
+Garanția de participare în valoare de 854.000 lei (cf. III.1.6.a Fișa de date) este constituită prin [Bancă/Asigurări] [Denumire instrument] nr. [Nr.] din data [Data], cu valabilitate 10 luni de la termenul limită de depunere a ofertelor (până la [Data + 10 luni]).
+Instrumentul de garantare este irevocabil și necondiționat, în beneficiul Autorității Contractante (ANSVSA, cont RO 13TREZ7005005XXX000221, CUI 16277408).
+
+### 15.4 Semnătura ofertei
+
+Toate documentele componente ale ofertei tehnice VOGO TECHNOLOGY sunt semnate electronic calificat (eIDAS) de reprezentantul legal al ofertantului, conform Legii nr. 455/2001 și Regulamentului (UE) 910/2014.

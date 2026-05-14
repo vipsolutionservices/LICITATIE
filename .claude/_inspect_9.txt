@@ -1,0 +1,63 @@
+
+## 9. Echipa de proiect
+
+Capitolul răspunde la Factorul de evaluare nr. 2 — Experiența specifică a experților (30 puncte total, câte 5 puncte per expert × 6 experți). VOGO TECHNOLOGY propune o echipă completă, formată din experți permanenți ai companiei și ai partenerului [PARTENER], cu experiență demonstrabilă în implementarea de sisteme informatice complexe pentru instituții publice.
+
+### 9.1 Structura organizatorică a echipei
+
+Echipa de proiect VOGO TECHNOLOGY pentru SIDISVA este structurată pe 4 nivele de organizare, asigurând atât controlul executiv cât și execuția tehnică:
+Nivelul 1 — Conducere proiect: Manager de proiect (PM), Sponsor (Director executiv VOGO TECHNOLOGY);
+Nivelul 2 — Lead-uri tehnice: Arhitect sistem, Team Leader software, Coordonator suport tehnic;
+Nivelul 3 — Experți specializați: Analist business, Expert procese, Expert BD, Expert securitate, Expert testare, Experți instruire;
+Nivelul 4 — Echipe de execuție: Dezvoltatori frontend, backend, DevOps, QA — adaptate per modul (LIMS, DMS, Portal, GIS, Integrări).
+
+### 9.2 Cei 6 experți evaluați (Factor 2 — 30 puncte)
+
+Pentru fiecare dintre cei 6 experți evaluați, VOGO TECHNOLOGY țintește plafonul maxim al numărului de proiecte similare (5+ proiecte = 5 puncte/expert × 6 experți = 30 puncte totale).
+
+[TABLE]
+| Expert | Rol | Nume propus | Experiență totală | Proiecte similare |
+| Expert 1 | Manager de proiect | [Nume Prenume] | ≥10 ani PM | ≥5 proiecte cu min 7 module + portal |
+| Expert 2 | Analist de business (BA) | [Nume Prenume] | ≥8 ani BA | ≥5 proiecte cu min 7 module + portal |
+| Expert 3 | Arhitect sistem | [Nume Prenume] | ≥10 ani arhitect | ≥5 proiecte cu min 7 module + portal |
+| Expert 4 | Team Leader software | [Nume Prenume] | ≥8 ani lead SW | ≥5 proiecte cu min 7 module + portal |
+| Expert 5 | Expert analiză și optimizare procese | [Nume Prenume] | ≥8 ani consulting | ≥5 proiecte similare |
+| Expert 6 | Expert administrare baze de date | [Nume Prenume] | ≥8 ani DBA | ≥5 proiecte cu min 7 module + portal |
+[/TABLE]
+
+Definiția proiectului similar (cf. Caiet sarcini cap. 13, Factor 2):
+Pentru Experții 1, 2, 3, 4, 6: servicii de dezvoltare/configurare a unei soluții software sau sistem informatic cu minim 7 module interconectate, din care cel puțin un modul de tip portal, în care expertul a avut responsabilități specifice rolului propus;
+Pentru Expertul 5: cerința este mai relaxată — proiecte/contracte care au avut ca obiect servicii de dezvoltare/configurare a unei soluții software/sistem informatic, fără cerința celor 7 module.
+Punctajul per expert conform Caietului de Sarcini: 5+ proiecte = 5 puncte; 4 proiecte = 4 puncte; 3 proiecte = 3 puncte; 2 proiecte = 0 puncte (cerință minimă, fără punctaj).
+
+### 9.3 Experți suport (cerință eligibilitate, fără punctaj)
+
+Conform cap. 8 din Caietul de Sarcini, sunt cerute 16 roluri totale. Experții suplimentari (cerință eligibilitate, fără punctaj direct):
+
+[TABLE]
+| Rol expert (eligibilitate, fără punctaj) | Cerință minimă |
+| Expert comunicații și securitate (1) | Studii sup. informatică/comunicații; min 2 proiecte similare; CISSP/CISM recomandate |
+| Expert testare (1) | Studii sup.; min 2 proiecte; ISTQB Foundation+Advanced recomandate |
+| Expert dezvoltare front-end (≥2) | Studii sup.; React/Angular/Vue; min 2 proiecte similare |
+| Expert dezvoltare back-end (≥3) | Studii sup.; Java/Node/Python/.NET; min 2 proiecte similare |
+| Expert DevOps (≥1) | Studii sup.; Kubernetes, Docker, CI/CD, IaC; min 2 proiecte |
+| Expert integrări / API (≥1) | Studii sup.; HL7, REST, SOAP; certificare HL7 plus |
+| Expert UX/UI (1) | Studii sup.; Figma/Adobe XD; portofoliu portale publice; WCAG 2.1 |
+| Expert documentație (1) | Studii sup.; experiență redactare manuale tehnice |
+| Expert instruire (2) | Studii sup.; min 2 sesiuni instruire utilizatori sisteme informatice |
+| Coordonator suport tehnic (1) | Studii sup.; experiență ITIL; min 3 ani management echipă suport L1-L3 |
+[/TABLE]
+
+
+### 9.4 Disponibilitate și angajament experți
+
+Toți experții propuși sunt angajați permanenți ai VOGO TECHNOLOGY sau ai partenerului [PARTENER], cu disponibilitate on-site în București și pe teritoriul României. Declarațiile de disponibilitate individuale, semnate de fiecare expert, sunt anexate ofertei în Anexa K (Pachet declarații).
+
+### 9.5 Documente justificative experți
+
+Pentru fiecare expert propus, anexăm în Anexa E:
+CV în format Europass — actualizat la zi;
+Diplome de studii superioare relevante;
+Certificări profesionale (PMP, ITIL, ISTQB, CISSP, HL7, etc.);
+Dovezi proiecte similare: copii ale Proceselor-Verbale de recepție, certificate constatatoare, recomandări semnate de beneficiari, atestând rolul efectiv al expertului în acele proiecte;
+Declarație de disponibilitate semnată de expert pentru proiectul SIDISVA pe durata 18+36 luni.

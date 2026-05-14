@@ -1,0 +1,102 @@
+
+## 5. Arhitectura soluției și lista licențelor
+
+Capitolul răspunde la cerința IV.4.1 lit. b) din Fișa de date. Soluția VOGO ENTERPRISE BUSINESS SUITE este construită pe o arhitectură multi-nivel modernă, scalabilă și sigură, conformă cu OUG nr. 89/2022 (Cloud Guvernamental) și cu cerințele arhitecturale ale Caietului de Sarcini (cap. 3.4.3).
+
+### 5.1 Arhitectura logică (multi-tier)
+
+Soluția SIDISVA este structurată pe 5 nivele logice (tier-uri), conform principiului divizării arhitecturii pe nivele:
+Tier 1 — Nivel prezentare: Portal web responsive, aplicații mobile native (iOS, Android), interfețe administrative pentru personalul ANSVSA;
+Tier 2 — API Gateway: punct unic de intrare pentru toate cererile externe; autentificare, throttling, audit, transformare protocol;
+Tier 3 — Microservicii business: implementarea funcționalităților celor 14 module funcționale; comunicare prin REST/JSON și event-driven (Kafka);
+Tier 4 — Servicii partajate: autentificare (IAM), management documente (DMS engine), workflow (BPMN engine), notificări, audit, raportare;
+Tier 5 — Date: baze de date relaționale, BD spațiale (PostGIS), cache distribuit (Redis), search engine (Elasticsearch), object storage (S3-compatible).
+Componentele cross-cutting (orizontale) asigură funcționalitățile transversale: securitate, monitoring, logging, deployment automatizat (CI/CD). Arhitectura este construită ferm pe principiile SOA (Service-Oriented Architecture) și REST — interoperabilitatea cu sisteme externe se realizează prin servicii web standard, complet documentate în Anexa C.
+
+### 5.2 Arhitectura fizică (deployment)
+
+Soluția VOGO ENTERPRISE BUSINESS SUITE este implementată în Cloud-ul Privat Guvernamental conform OUG 89/2022. Topologia de deployment:
+Centrul de date principal (Cloud Privat Guvernamental): toate componentele software, baze de date, integrări;
+Site Disaster Recovery (DR): replicare sincronă pentru date critice, asincronă pentru istoric; RPO ≤15 minute, RTO ≤4 ore;
+Locații DSVSA (42) + Institute (3) + ANSVSA centru: NGFW (90 buc), switch-uri (241 acces + 50 POE + 2 agregare), access points (175), echipamente teren (336 complete), IoT laboratoare (126);
+Comunicații site-to-site prin VPN IPSec sau MPLS dedicat;
+Edge servers la nivelul DSVSA pentru funcționalități critice cu latență scăzută;
+DMZ separată pentru Portalul Servicii Publice — izolare strictă a accesului extern.
+
+### 5.3 Arhitectura operațională — Înaltă disponibilitate
+
+Având în vedere că SIDISVA este un sistem critic pentru ANSVSA — susținând procesele operaționale ale rețelei naționale sanitar-veterinare — arhitectura este recomandată să fie redundantă pe toate nivelele, asigurând astfel continuitatea operațională:
+Cluster activ-activ pentru nivelul de aplicație — scalabilitate orizontală automată, fără single point of failure;
+Load Balancer redundant în fața serverelor de aplicație — capacitate ≥300.000 cereri L7 HTTP/secundă;
+Cluster activ-pasiv sau activ-activ pentru baza de date — replicare sincronă pentru integritate;
+Storage cu redundanță RAID 10 + replicare la nivel de site;
+Două medii: producție + testare-dezvoltare (conform cerinței CS — un singur mediu inițial pentru dev/testare/instruire, ulterior producție).
+
+### 5.4 Arhitectura de securitate
+
+Securitatea sistemului SIDISVA este asigurată prin arhitectura defense-in-depth pe 7 straturi (detaliată în cap. 10 al ofertei). Echipamentele de securitate ofertate respectă specificațiile cap. 3.4.3.4.1.1 și următoarele:
+WAF appliance virtual redundant — VMware/Hyper-V/KVM, 8 vCPU, 3 Gbps HTTP, până la 64 domenii administrative, modes Reverse proxy + Inline transparent (cf. caiet 3.4.3.4.1.1);
+Honeypot — detecție atacuri, alimentare automată SIEM;
+SIEM — corelare evenimente, retenție 1 an cald + 6 ani rece, alertare 24×7;
+Email security — anti-spam, anti-malware, sandboxing fișiere atașate;
+NGFW — segmentare rețea, IPS/IDS, application control, SSL inspection.
+Detalii tehnice complete cu fișe producători sunt prezentate în Anexa B (Lista echipamentelor hardware).
+
+### 5.5 Integrarea cu sistemele externe
+
+VOGO ENTERPRISE BUSINESS SUITE expune un set complet de conectori pentru realizarea integrărilor cu sistemele externe, prin interfețe standard:
+Servicii web REST + SOAP — pentru integrări sincrone cu sisteme partenere;
+CMIS (Content Management Interoperability Services) — pentru schimburi de documente;
+HL7 FHIR — pentru integrarea cu sisteme medicale și veterinare;
+Event-driven prin Kafka — pentru integrări asincrone scalabile;
+Conectori dedicați pentru: ROeID, eIDAS, ONRC, APIA, ANCPI, ANARZ, PNI, PDURo, BND-SNIIA, LIMS extern, RASFF.
+
+### 5.6 Necesar hardware al soluției
+
+Pornind de la arhitectura soluției, VOGO TECHNOLOGY recomandă următoarele caracteristici ale serverelor:
+
+#### Mediul de producție — sistemul intern
+
+Load Balancer (HW sau SW): minim 1 GB throughput L7, 1 GB throughput SSL, ≥300.000 cereri L7 HTTP/secundă;
+Server Baze de Date (cluster activ-pasiv): minim 64 GB RAM, procesor cu minim 8 core-uri, spațiu local 512 GB SSD;
+Server Aplicație (cluster activ-activ): minim 64 GB RAM, procesor cu minim 8 core-uri, spațiu local 512 GB SSD;
+Storage extern: dependent de volumul documentelor — estimat 10-20 TB utili / RAID 10.
+
+#### Mediul de producție — sistemul portal expus cetățeni (DMZ)
+
+Load Balancer DMZ: aceleași specificații;
+Server BD + Aplicație DMZ: aceleași specificații, izolare de la sistemul intern;
+Storage DMZ: 1-2 TB utili / RAID 10.
+
+#### Mediul de testare-dezvoltare
+
+Server BD: minim 8 GB RAM, 8 core-uri, 512 GB SSD;
+Server Aplicație: minim 8 GB RAM, 8 core-uri, 512 GB SSD;
+Storage extern: 1 TB util / RAID 10.
+Soluția poate fi implementată atât într-un mediu fizic, cât și într-un mediu virtualizat integral (recomandat) — VMware vSphere, Microsoft Hyper-V, KVM sau echivalent. Implementarea în Cloud Guvernamental este preferată conform OUG 89/2022.
+
+### 5.7 Lista licențelor software
+
+Tabelul de mai jos prezintă lista licențelor software propuse de VOGO TECHNOLOGY pentru sistemul SIDISVA. ATENȚIE: Lipsa Listei Licențelor face oferta NECONFORMĂ. Versiunea completă (estimat 30-50 itemuri), cu toate cantitățile finale, prețurile de listă și parametrii de licențiere, este anexată ofertei ca Anexa A.
+
+[TABLE]
+| Nr. | Nume licență | Ediție | Producător | Cantitate | Unitate | Cap. caiet |
+| 1 | Red Hat Enterprise Linux Server | [Standard/Premium] | Red Hat Inc. | [Nr. socket] | Per socket | 3.4.3.2.3 |
+| 2 | PostgreSQL Enterprise (sau Oracle DB) | [Edition] | [Producător] | [Nr.] | Per core / server | 3.4.3.2.4 |
+| 3 | Keycloak / Entra ID (IAM) | [Edition] | [Producător] | [Nr.] | Per user / MAU | 3.4.3.2.7 |
+| 4 | WAF appliance virtual | [Throughput tier] | [Producător] | 2 | Per appliance | 3.4.3.4.1.1 |
+| 5 | SIEM (Splunk / IBM QRadar / Elastic) | [Edition] | [Producător] | 1 | Per EPS / nod | 3.4.3.4.1.4 |
+| 6 | NGFW Centre | [Throughput] | [Producător] | 2 | Per appliance | 3.4.3.4.2.x |
+| 7 | NGFW Locații | [Throughput] | [Producător] | 90 | Per appliance | 3.4.3.4.2.x |
+| 8 | Email Security | [Edition] | [Producător] | 2 | Per user / throughput | 3.4.3.4.1.5 |
+| 9 | Honeypot | [Edition] | [Producător] | 1 | Per appliance | 3.4.3.4.1.2 |
+| 10 | Management centralizat rețea | [Edition] | [Producător] | 1 | Per node managed | 3.4.3.4.1.3 |
+| 11 | VOGO ENTERPRISE BUSINESS SUITE | Enterprise | VOGO TECHNOLOGY | 1 | Site license perpetuă | 3.4.3.3.x |
+| 12 | Licențe Microsoft Office / M365 | [Plan] | Microsoft | [Nr.] | Per user | 3.4.3.x |
+| 13 | Antivirus / EDR endpoint | [Edition] | [Producător] | [Nr.] | Per endpoint | 3.4.3.4.x |
+| 14 | Backup software | [Edition] | [Producător] | [Nr.] | Per TB | 3.4.3.x |
+| 15 | Kubernetes / OpenShift | [Edition] | [Producător] | [Nr.] | Per node | 3.4.3.x |
+| … | [Continuat — estimat 30-50 itemuri în Anexa A] |  |  |  |  |  |
+[/TABLE]
+
+Pentru licența VOGO ENTERPRISE BUSINESS SUITE, VOGO TECHNOLOGY oferă drept de proprietate perpetuu pentru ANSVSA, fără limitare de utilizatori, instituții sau funcționalități. Codul sursă custom dezvoltat pentru specificul SIDISVA este transferat integral ANSVSA conform cap. 12 din Caietul de Sarcini.

@@ -1,0 +1,62 @@
+
+## 1. Rezumat executiv
+
+Prezentul document reprezintă oferta tehnică a VOGO TECHNOLOGY S.R.L. la procedura de atribuire a contractului având ca obiect „Achiziție de servicii pentru implementarea Sistemului Informatic Digitalizat în domeniul Sanitar Veterinar și pentru Siguranța Alimentelor — SIDISVA", organizată de Autoritatea Națională Sanitară Veterinară și pentru Siguranța Alimentelor (ANSVSA) prin anunțul de participare publicat în SEAP sub identificatorul CN1089237, cu termen de depunere a ofertelor la data de 21.05.2026, ora 15:00.
+În acest sens, VOGO TECHNOLOGY S.R.L. vă propune un sistem informatic integrat construit pe baza produsului software propriu VOGO ENTERPRISE BUSINESS SUITE — soluție de top dezvoltată integral în România, înregistrată la OSIM și la EUIPO ca marcă a Uniunii Europene cu numărul 019103505. Implementarea soluției pe specificul și pe cerințele ANSVSA și a celor 42 de Direcții Sanitar-Veterinare și pentru Siguranța Alimentelor Județene (DSVSA), respectiv a celor 3 institute subordonate, se va realiza de către echipa VOGO TECHNOLOGY împreună cu partenerul subcontractant [PARTENER].
+Soluția propusă acoperă în mod integral cele 14 module funcționale solicitate prin caietul de sarcini, infrastructura hardware aferentă (firewall-uri, switch-uri, access points, laptopuri, complete teren, dispozitive IoT pentru laboratoare), serviciile de implementare pe o perioadă de 18 luni, precum și garanția extinsă de 3 ani pentru întreg ansamblul: hardware, software de bază/aplicativ și sistem informatic.
+Soluția propusă este prezentată în detaliu în capitolul 4 al ofertei, fiind descrise atât caracteristicile funcționale ale celor 14 module care o fac potrivită pentru utilizare în cadrul ANSVSA și al rețelei naționale sanitar-veterinare, cât și arhitectura tehnică în care va fi implementată pentru a răspunde cerințelor operaționale, de scalabilitate și de securitate impuse.
+Capitolul 2 al ofertei prezintă abordarea și metodologia de management de proiect (PMI/PMBoK), de analiză a cerințelor (BABOK) și de dezvoltare hibridă Agile-Scrum, precum și serviciile concrete care vor fi executate pentru realizarea sistemului în cele 18 luni de implementare.
+Suportul tehnic oferit după punerea în producție a sistemului, incluzând o detaliere a serviciilor de help-desk, prezentarea platformei de issue tracking și a procedurii de deschidere a tichetelor, precum și nivelurile garantate ale serviciilor (SLA), este descris în capitolul 7. VOGO TECHNOLOGY oferă o perioadă de garanție și suport de 3 ani de la data trecerii în producție, cu timpi de răspuns și remediere stricți pentru cele 4 niveluri de severitate (Critic, Major, Mediu, Minor).
+Matricea de conformitate, în care răspundem punct cu punct la fiecare dintre cerințele caietului de sarcini, se regăsește în Anexa F a prezentei oferte.
+
+### 1.1 Înțelegerea obiectivelor proiectului SIDISVA
+
+Proiectul SIDISVA este finanțat din Fondul European de Dezvoltare Regională (FEDR) prin Programul Creștere Inteligentă, Digitalizare și Instrumente Financiare 2021–2027 (PoCIDIF), Prioritate P2 — Digitalizare în administrația publică centrală și mediul de afaceri, Acțiunea 2.2 E-guvernarea și digitalizarea în beneficiul cetățenilor, cod SMIS 336342, completat de cofinanțare din bugetul de stat.
+Înțelegem că ANSVSA, prin acest proiect, urmărește digitalizarea completă a fluxurilor sanitar-veterinare și de siguranță alimentară pe trei axe majore:
+Servicii publice digitale către cetățeni, medici veterinari și operatori economici (peste 185.000 utilizatori unici anual estimați) prin Portal de Servicii Publice și aplicație mobilă;
+Optimizarea proceselor interne și a fluxurilor de lucru la nivelul celor 46 instituții publice deservite (ANSVSA centru + 42 DSVSA + 3 institute);
+Integrarea nativă în ecosistemul Cloud Guvernamental și interoperabilitatea cu sistemele naționale și europene de referință: ROeID, eIDAS, ONRC, APIA, ANCPI, ANARZ, PNI, PDURo etc.
+Indicatorul țintă RCR11 al PoCIDIF impune livrarea a minimum 56 servicii electronice publice noi sau optimizate. VOGO TECHNOLOGY își asumă livrarea integrală a acestui indicator prin cele 14 module funcționale ofertate, fiecare aducând contribuția specifică la rețeaua de servicii digitale finale.
+
+### 1.2 Avantajele competitive ale propunerii noastre
+
+Ca avantaje competitive esențiale ale propunerii noastre, în raport cu cerințele identificate de Autoritatea Contractantă în Caietul de Sarcini, dorim să punctăm:
+Soluție dezvoltată integral în România. VOGO ENTERPRISE BUSINESS SUITE este dezvoltată complet în România, de informaticieni români, în corelație completă cu cerințele legislative și de business din România, respectând normele europene și standardele internaționale de securitate, interoperabilitate și arhitectură. Nu este o soluție externă adaptată la nevoile organizațiilor din România, ci o soluție gândită și construită pentru aceste nevoi de la zero. Înregistrarea la OSIM și marca europeană EUIPO nr. 019103505 atestă proprietatea intelectuală și maturitatea produsului.
+Producător + Integrator în aceeași echipă. VOGO TECHNOLOGY este atât producătorul software al VOGO ENTERPRISE BUSINESS SUITE, cât și integratorul care va realiza implementarea la sediul ANSVSA. Acest fapt elimină riscurile de comunicare între producător și partener, scurtează drastic timpul de rezolvare a tichetelor și permite adaptări specifice ale codului sursă pe parcursul implementării, în acord cu cerințele ANSVSA.
+Disponibilitate a resurselor în România. Într-o piață în care resursele umane înalt calificate pe IT sunt din ce în ce mai puține, noi, ca Producător, avem disponibili pe teritoriul național experții care cunosc absolut totul despre soluție și nu depindem de subcontractori externi. Resursele cheie (Manageri de Proiect, Analiști, Arhitecți, Dezvoltatori Senior, Specialiști Securitate) sunt asigurate intern, on-site, în limba română.
+Arhitectură Cloud-Native modulară, bazată pe servicii (SOA / microservicii), implementată într-un cloud privat conform OUG nr. 89/2022, compatibilă tehnic cu serviciile de stocare și baze de date din Cloud-ul Guvernamental și cu tehnologiile de containerizare Docker / Kubernetes. Arhitectura asigură scalabilitate orizontală și verticală, suportând creșterea volumului de date și a numărului de utilizatori fără degradare a performanței.
+Securitate la nivel de stat — soluție conformă cu Legea nr. 362/2018 privind asigurarea unui nivel comun ridicat de securitate cibernetică, Regulamentul (UE) 2022/2554 (DORA), GDPR, eIDAS și standardele ISO/IEC 27001/27017/27018. Includem testare de penetrare (PenTest) și audit de securitate ca parte integrantă a etapei de testare.
+Interoperabilitate nativă HL7 pentru schimbul de date de sănătate, conform standardelor internaționale recunoscute, asigurând integrarea bidirecțională cu sistemele LIMS, BND-SNIIA și sistemele externe ale partenerilor instituționali (ONRC, APIA, ANCPI, ANARZ etc.).
+Conformitate DNSH integrală. Toate echipamentele hardware ofertate sunt selectate astfel încât să respecte principiul „Do No Significant Harm", cu accent pe consumul redus de energie al laptopurilor (sub 20 Wh în modul veghe) și pe practici de livrare și ambalare cu impact carbon minim.
+Echipă cu experiență relevantă demonstrată. Echipa propusă include experți cu cel puțin 5 proiecte similare fiecare în roluri identice cu cele cerute, certificările profesionale fiind documentate în capitolul 9. Toți experții cheie sunt angajați permanent ai VOGO TECHNOLOGY sau ai partenerului subcontractant.
+Garanție extinsă 3 ani — acoperă integral hardware-ul, software-ul de bază și aplicativ, precum și sistemul informatic ca întreg, inclusiv corecții de erori, patch-uri de securitate și mentenanță evolutivă minoră. SLA cu 4 niveluri de severitate și timpi de răspuns maxim de 1 oră pentru incidente critice.
+
+### 1.3 Angajamentul VOGO TECHNOLOGY
+
+Ne asumăm prin prezenta ofertă respectarea integrală a cerințelor caietului de sarcini și a tuturor termenelor, calităților și parametrilor ofertați. Înțelegerea profundă a contractului, a obiectivelor PoCIDIF, a cerințelor funcționale și nefuncționale ale celor 14 module, precum și a contextului instituțional al rețelei naționale sanitar-veterinare ne permit să garantăm:
+Livrarea la termen a tuturor celor 56 de servicii electronice publice solicitate;
+Trasabilitate completă a cerințelor pe traseul Caiet de Sarcini → Document de Analiză → Scenarii de Testare → Recepție Finală;
+Calitatea livrabilelor prin metodologia certificată ISO 9001 și prin matricea de conformitate aplicată pe fiecare cerință;
+Continuitatea sistemului prin garanție și suport tehnic 3 ani după trecerea în producție.
+
+### 1.4 Sinteza ofertei
+
+Elementele cheie ale ofertei sunt sintetizate în tabelul de mai jos:
+
+[TABLE]
+| Element | Valoare propusă |
+| Ofertant principal | VOGO TECHNOLOGY S.R.L. |
+| Produs software ofertat | VOGO ENTERPRISE BUSINESS SUITE — soluție proprie, înregistrată OSIM (RO) și EUIPO (marcă UE nr. 019103505) |
+| Durată implementare | 18 luni de la semnarea contractului (cf. cap. 6 Caiet de Sarcini) |
+| Durată garanție | 3 ani — hardware, software, sistem informatic (cf. IV.4.2 Fișa de date) |
+| Module funcționale livrate | 14 module + 9 componente software de bază + infrastructură HW completă |
+| Servicii electronice publice | ≥56 servicii (conform indicator RCR11 PoCIDIF) |
+| Capacitate utilizatori | ≥185.000 utilizatori unici anual |
+| Instituții publice deservite | 46 (ANSVSA centru + 42 DSVSA + 3 institute) |
+| Cloud | Cloud privat conform OUG 89/2022, integrat în Cloud Guvernamental |
+| Metodologie | PMI/PMBoK pentru management de proiect, BABOK pentru analiză, Agile-Scrum hibrid pentru dezvoltare |
+| Standarde aplicate | ISO 9001, ISO/IEC 27001, ISO/IEC 27017/27018, ISO/IEC 20000-1, HL7, GDPR, eIDAS, ISO/IEC 11179 |
+| Preț total (RON fără TVA) | [Se completează la finalizarea propunerii financiare] |
+[/TABLE]
+
+Detaliile complete privind soluția, metodologia, echipa, planul de proiect și conformitatea cu cerințele se regăsesc în capitolele următoare ale prezentei oferte tehnice.

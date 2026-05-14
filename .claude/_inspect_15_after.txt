@@ -1,0 +1,213 @@
+
+## 15. Declarații obligatorii și documente anexate
+
+Capitolul prezintă declarațiile obligatorii anexate ofertei tehnice depuse de asocierea condusă de <LIDER> pentru contractul SIDISVA, conform Legii nr. 98/2016 privind achizițiile publice, Hotărârii Guvernului nr. 395/2016 pentru aprobarea Normelor metodologice, OUG nr. 41/2016 privind transferul drepturilor de proprietate intelectuală pentru programe informatice, precum și cerințelor explicite din Caietul de Sarcini SIDISVA (cap. 12 — acceptare condiții drepturi de proprietate intelectuală; cap. 3.4.8 — DNSH; specificațiile Lege 354/2022 privind produse cu origine din state cu risc) și Fișei de date a achiziției. Toate declarațiile sunt semnate electronic calificat (eIDAS — Reg UE 910/2014, L 455/2001) de reprezentantul legal al <LIDER> și de fiecare membru al asocierii, după caz. Pachetul complet este anexat în Anexa K — Pachet declarații.
+
+### 15.1 Cadrul juridic al declarațiilor
+
+Cadrul legal care fundamentează declarațiile depuse:
+
+[TABLE]
+| Act normativ | Obiectul reglementării |
+| Legea nr. 98/2016 (achiziții publice) | Art. 60 (conflict de interese), art. 164 (motive de excludere — cazier judiciar), art. 165 (obligații fiscale), art. 167 (alte motive de excludere). |
+| HG nr. 395/2016 (Norme metodologice L 98/2016) | Reguli depunere oferte, DUAE, documente de calificare. |
+| OUG nr. 41/2016 (drepturi proprietate intelectuală programe informatice) | Art. 12 alin. (1) — transferul drepturilor patrimoniale de autor pentru programe informatice dezvoltate în executarea contractului. |
+| Cap. 12 din Caietul de Sarcini SIDISVA | Acceptare explicită a condițiilor privind drepturile de proprietate intelectuală — cerință obligatorie de specificat în clar în propunerea tehnică. |
+| Cap. 3.4.8 din Caietul de Sarcini SIDISVA | Implementarea principiului DNSH (Do No Significant Harm). |
+| Regulamentul (UE) 2020/852 (Taxonomy) | Cele 6 obiective de mediu — Declarația DNSH (cap. 11 ofertă). |
+| Legea nr. 354/2022 | Restricții produse origine din state cu risc (RU, BY, IR, KP) — declarație conformitate stack tehnic. |
+| Legea nr. 362/2018 + OUG 155/2024 (NIS2) | Securitate cibernetică sisteme esențiale — declarație conformitate. |
+| Regulamentul (UE) 2016/679 (GDPR) + L 190/2018 | Protecția datelor cu caracter personal — declarație conformitate. |
+| Legea nr. 506/2004 | Confidențialitate comunicații electronice. |
+| Regulamentul (UE) 910/2014 (eIDAS) + L 455/2001 | Semnătura electronică calificată — instrument de validare juridică ofertă. |
+| Legea nr. 8/1996 (drepturi de autor) | Drepturile de autor asupra produselor software dezvoltate. |
+[/TABLE]
+
+
+### 15.2 Lista sintetică a declarațiilor obligatorii anexate (Anexa K)
+
+
+[TABLE]
+| Nr. | Denumire declarație | Temei legal / Cerință | Semnatari |
+| 1 | Declarație de acceptare a condițiilor privind drepturile de proprietate intelectuală (cap. 12 CdS) | Cap. 12 CdS + OUG 41/2016 art. 12 alin. (1) | Lider asociere + fiecare membru |
+| 2 | Declarație DNSH (Do No Significant Harm) | Reg. UE 2020/852 + cap. 3.4.8 CdS | Lider asociere |
+| 3 | Declarație conformitate Lege 354/2022 (produse non-RU/BY/IR/KP) | L 354/2022 + Decizia (UE) 2022/2548 | Lider + furnizor antivirus + furnizori sec. cibernetică |
+| 4 | Declarație conformitate NIS2 (Lege 362/2018 + OUG 155/2024) | L 362/2018 + OUG 155/2024 | Lider asociere |
+| 5 | Declarație conformitate GDPR + protecție date personale | Reg. UE 2016/679 + L 190/2018 | Lider + procesatori date subcontractanți |
+| 6 | Declarație neîncadrare în art. 164 L 98/2016 (cazier judiciar) | L 98/2016 art. 164 | Reprezentant legal lider + fiecare membru asociere |
+| 7 | Declarație neîncadrare în art. 165 L 98/2016 (obligații fiscale) | L 98/2016 art. 165 | Lider asociere + fiecare membru |
+| 8 | Declarație neîncadrare în art. 167 L 98/2016 (alte motive excludere) | L 98/2016 art. 167 | Lider asociere + fiecare membru |
+| 9 | Declarație conflict de interese (art. 60 L 98/2016) | L 98/2016 art. 60 | Reprezentant legal + experți cheie propuși |
+| 10 | Declarație asumare condiții documentație de atribuire | L 98/2016 art. 215 | Lider asociere |
+| 11 | Declarație disponibilitate experți cheie (6 experți evaluabili P2) + experți non-cheie | Cap. 8.1 CdS + Fișa de date Factor 2 | Fiecare expert propus, individual |
+| 12 | Declarație respectare obligații mediu, social și relații de muncă | L 98/2016 + Convenții ILO + L 53/2003 (Codul muncii) | Lider asociere + fiecare membru |
+| 13 | Declarație părți confidențiale ale ofertei (cu justificare per item) | L 98/2016 art. 57 alin. (4) | Lider asociere |
+| 14 | Declarație conformitate produse cu Directiva RoHS / WEEE | Directiva 2011/65/UE + Directiva 2012/19/UE | Lider asociere + furnizori hardware |
+| 15 | DUAE — Documentul Unic European de Achiziții (versiune electronică SICAP) | Reg. UE 2016/7 + HG 395/2016 | Reprezentant legal lider + fiecare membru asociere + subcontractanți + terți susținători |
+[/TABLE]
+
+
+### 15.3 Declarații specifice cerințelor explicite din Caietul de Sarcini SIDISVA
+
+
+#### 15.3.1 Acceptarea condițiilor privind drepturile de proprietate intelectuală (cap. 12 CdS)
+
+Cap. 12 din Caietul de Sarcini SIDISVA prevede explicit:
+"Ofertantul trebuie să ia la cunoștință și să menționeze în clar acceptarea acestor condiții în propunerea tehnică depusă." (cap. 12, alineat final)
+ACCEPTARE FORMALĂ:
+Subscrisul/Subsemnatul, în calitate de reprezentant legal al <LIDER> și al asocierii de ofertanți, iau la cunoștință integral conținutul cap. 12 din Caietul de Sarcini SIDISVA și ACCEPT în clar următoarele:
+Toate drepturile patrimoniale de autor asupra livrabilelor create în executarea contractului (cod sursă custom dezvoltat, documentație, rapoarte, scenarii teste, manuale) se transferă către Beneficiar (ANSVSA) în momentul acceptanței, conform OUG 41/2016 art. 12 alin. (1).
+Toate drepturile de utilizare exclusivă asupra componentelor software aplicative dezvoltate sau personalizate în cadrul contractului se transferă către ANSVSA — fără limitare geografică sau de altă natură.
+Prestatorul (<LIDER> + asocierea) are obligația de a transmite codul sursă împreună cu documentația aferentă acestuia — atât pentru componentele custom (transfer total drepturi proprietate intelectuală), cât și pentru componentele software aplicative COTS unde cap. 3.4.3.3.4 cere livrarea codului sursă perpetuu (în acest ultim caz, transferul drepturilor IP se aplică doar dezvoltărilor și customizărilor efectuate în cadrul contractului, conform clarificării din cap. 12 alineat 2).
+În lipsa transmiterii codului sursă + documentației corespunzătoare, livrabilele nu vor obține acceptanța din partea ANSVSA — clauză asumată.
+Beneficiarul (ANSVSA) va putea utiliza, ceda, transfera sau publica drepturile dobândite așa cum consideră de cuviință, fără limitare geografică sau de altă natură.
+Această acceptare în clar îndeplinește cerința explicită din cap. 12 alineat final al CdS și constituie ANGAJAMENT FERM al <LIDER> și al întregii asocieri de ofertanți. Acceptarea este reluată distinct în Declarația nr. 1 din pachetul de declarații (Anexa K), semnată electronic calificat de fiecare membru al asocierii.
+
+#### 15.3.2 Declarația DNSH (Reg. UE 2020/852 + cap. 3.4.8 CdS)
+
+Conform cap. 11 al ofertei (Măsuri DNSH) și cap. 3.4.8 din Caietul de Sarcini, <LIDER> declară pe propria răspundere că toate echipamentele și serviciile ofertate respectă integral principiul Do No Significant Harm pe toate cele 6 obiective de mediu definite în Regulamentul (UE) 2020/852:
+Atenuarea schimbărilor climatice;
+Adaptarea la schimbările climatice;
+Utilizarea durabilă și protecția resurselor de apă și marine;
+Tranziția la economia circulară;
+Prevenirea și controlul poluării;
+Protecția biodiversității și a ecosistemelor.
+Declarația include angajamentul de raportare semestrială către ANSVSA a indicatorilor DNSH (consum energie infrastructură, procent reciclare WEEE, emisii CO2e estimate livrări) pe toată durata contractului. Documente justificative anexate în Anexa I — Pachet DNSH (cap. 11.7 al ofertei).
+
+#### 15.3.3 Declarație conformitate Lege 354/2022 (produse cu origine non-RU/BY/IR/KP)
+
+Conform Legii nr. 354/2022 privind interzicerea utilizării în sistemele informatice naționale a produselor tehnologice provenind din state cu risc identificate, <LIDER> declară pe propria răspundere că:
+Soluția antivirus / EDR ofertată (CrowdStrike Falcon — SUA / SentinelOne — SUA-Israel) NU este produsă de entități cu sediu sau capital majoritar în Federația Rusă, Belarus, Republica Islamică Iran sau Republica Populară Democrată Coreeană (KP).
+Toate componentele software și hardware critice din stack-ul ofertat sunt produse de furnizori cu sediu în Uniunea Europeană sau în state aliate (SUA, UK, Israel, Japonia, Coreea de Sud, Canada, Australia, Noua Zeelandă) — Microsoft, Oracle, Red Hat, Cisco, Fortinet, Palo Alto Networks, F5 Networks, Splunk, IBM, HPE, Lenovo, Dell, Apple, Google, Elastic NV (Olanda), NextGen Healthcare (SUA — Mirth Connect).
+<LIDER> și fiecare membru al asocierii (inclusiv subcontractanții) NU au capital, beneficiari efectivi sau asociați în state cu risc identificate, conform verificării în Registrul Comerțului + DUAE + raport BENEFICAR.
+În cazul descoperirii ulterioare a unei neconformități, <LIDER> se angajează să înlocuiască componenta afectată cu o alternativă conformă, fără cost adițional pentru ANSVSA, în maxim 30 zile calendaristice.
+
+#### 15.3.4 Declarație conformitate NIS2 (L 362/2018 + OUG 155/2024)
+
+Conform Legii nr. 362/2018 privind asigurarea unui nivel comun ridicat de securitate a rețelelor și sistemelor informatice, modificată și completată prin OUG nr. 155/2024 (transpunere Directiva NIS2 — UE 2022/2555), <LIDER> declară că:
+Sistemul SIDISVA este proiectat și implementat conform principiilor și cerințelor NIS2 — gestionare riscuri cibernetice, incident reporting, supply chain security, criptografie, MFA, audit (vezi cap. 10 ofertă).
+<LIDER> îndeplinește obligațiile entității esențiale (operator de servicii esențiale pentru ANSVSA ca beneficiar din sector administrație publică / sănătate animale).
+Toți furnizorii (subcontractanți) din lanțul ofertei demonstrează conformitate cu NIS2 prin certificate ISO 27001 valide și politici interne de gestionare incidente.
+<LIDER> raportează incidentele de securitate cibernetică către ANSVSA în maxim 24h de la detectare și către CERT-RO / CSIRT național conform OUG 155/2024 art. 31.
+
+#### 15.3.5 Declarație confidențialitate și protecție date personale (GDPR)
+
+Conform Regulamentului (UE) 2016/679 (GDPR), Legii nr. 190/2018 și Legii nr. 506/2004, <LIDER> declară că:
+Datele cu caracter personal ale persoanelor vizate (5.300+ angajați ANSVSA + DSVSA + Institute, 185.000 utilizatori portal cetățeni/an) sunt prelucrate conform principiilor GDPR — legalitate, limitare scop, minimizare date, exactitate, limitare stocare, integritate și confidențialitate.
+<LIDER>, în calitate de Persoană împuternicită (procesator) conform art. 28 GDPR, semnează acord de prelucrare date cu ANSVSA (Operator de date) la încheierea contractului.
+Subcontractanții (furnizorii din asociere) sunt sub-procesatori autorizați și semnează acorduri back-to-back cu <LIDER>.
+Personalul <LIDER> care accesează date personale ANSVSA semnează acord individual de confidențialitate.
+Securitatea datelor este asigurată prin cap. 10 al ofertei (defense-in-depth pe 7 straturi, criptare AES-256 at rest + TLS 1.3 in transit, audit imutabil 10 ani, log-uri cu pseudonimizare adrese IP).
+
+### 15.4 Declarații generale de neîncadrare (Legea 98/2016)
+
+
+#### 15.4.1 Art. 164 — Neîncadrare cazier judiciar
+
+<LIDER> și fiecare membru al asocierii declară că reprezentanții legali NU au fost condamnați prin hotărâre judecătorească definitivă pentru:
+Constituirea unui grup infracțional organizat;
+Corupție (dare/luare mită, trafic de influență, abuz de funcție, deturnare fonduri);
+Infracțiuni contra patrimoniului prin nesocotirea încrederii (delapidare, gestiune frauduloasă, înșelăciune);
+Infracțiuni de criminalitate informatică (acces ilegal, perturbare integritate date, deturnare resurse);
+Infracțiuni privind spălarea banilor sau finanțarea terorismului;
+Infracțiuni cu privire la mediu (poluare semnificativă, eliminare ilegală deșeuri);
+Exploatarea prin muncă a copiilor, traficul de persoane sau muncă forțată;
+Fraudă fiscală;
+Infracțiuni privind frauda împotriva intereselor financiare ale Uniunii Europene.
+Cazierul judiciar este atașat în Anexa K — Pachet declarații, valid la data depunerii ofertei.
+
+#### 15.4.2 Art. 165 — Neîncadrare obligații fiscale neexecutate
+
+<LIDER> și fiecare membru al asocierii declară că NU au obligații fiscale exigibile neachitate către bugetul general consolidat al statului (Trezorerie, Casa de Pensii, Casa de Asigurări de Sănătate, Casa Asigurări Șomaj) sau către bugetul local al sediului social, peste pragul prevăzut de L 98/2016 art. 165 alin. (3).
+Certificatele de atestare fiscală (ANAF + autoritate locală) sunt atașate în Anexa K, valabile la data depunerii ofertei.
+
+#### 15.4.3 Art. 167 — Alte motive de excludere
+
+<LIDER> și fiecare membru al asocierii declară că NU se află în niciuna dintre situațiile de excludere prevăzute la art. 167 alin. (1) L 98/2016:
+Stare de insolvență, faliment, lichidare judiciară sau încetare a activității;
+Conduită profesional defectuoasă (sancțiuni pentru încălcarea Codului muncii, mediu, sanitar-veterinar);
+Acorduri cu alți ofertanți pentru denaturarea concurenței la prezenta procedură;
+Conflict de interese nerezolvat prin măsuri eficiente;
+Implicare în pregătirea documentației de atribuire de o manieră care induce un avantaj concurențial;
+Reziliere anterioară de contract de achiziție publică sau aplicare de daune-interese, sau alte sancțiuni comparabile pentru deficiențe semnificative;
+Furnizare informații false sau omitere informații necesare verificării calificării;
+Influențare proces decizional autoritate contractantă prin mijloace ilegale;
+Includere pe liste de sancțiuni internaționale (EU, UN, OFAC) — verificare conform L 354/2022.
+
+#### 15.4.4 Art. 60 — Conflict de interese
+
+<LIDER>, fiecare membru al asocierii și fiecare expert propus în echipa de proiect declară că NU se află în niciuna dintre situațiile de conflict de interese prevăzute la art. 60 L 98/2016:
+Nu sunt rude până la gradul 4 inclusiv sau soți cu personal al ANSVSA implicat în procedură (membri comisie evaluare, persoane care aprobă);
+Nu sunt sau au fost în ultimele 12 luni angajați / asociați / consultanți ai ANSVSA;
+Nu au participat la pregătirea documentației de atribuire SIDISVA într-un mod care le-ar conferi avantaj concurențial;
+Nu au legături financiare directe / indirecte cu ofertanți concurenți la prezenta procedură.
+
+### 15.5 Documentul Unic European de Achiziții (DUAE)
+
+Conform Regulamentului (UE) 2016/7 și HG 395/2016, fiecare entitate juridică implicată în ofertă (lider asociere, membri asociere, subcontractanți declarați, terți susținători) depune DUAE completat electronic în SICAP, prin care:
+Confirmă îndeplinirea criteriilor de calificare (capacitate juridică, situație economică, capacitate tehnică);
+Declară inexistența motivelor de excludere (sintetizate la §15.4 de mai sus);
+Indică partea de contract subcontractată (dacă este cazul);
+Indică sprijinul terțului susținător (dacă este cazul).
+DUAE este semnat electronic calificat de reprezentantul legal al fiecărei entități. Documentele justificative (certificate, atestate, situații financiare) sunt depuse la cererea ANSVSA în etapa de verificare a calificării ofertantului clasat pe primul loc.
+
+### 15.6 Documente conexe (acorduri și împuterniciri)
+
+
+#### 15.6.1 Acord de asociere
+
+Acordul de asociere între <LIDER> (lider asociere) și cei 8 membri furnizori specializați (vezi cap. 1A al ofertei) este semnat electronic calificat de reprezentanții legali ai tuturor părților și anexat ofertei. Acordul precizează:
+Identificarea părților (denumire, CUI, sediu, reprezentant legal);
+Procentajul de participare al fiecărui membru (cu detaliere activități);
+Numirea liderului asocierii (<LIDER>) ca reprezentant legal pentru depunere ofertă + semnare contract;
+Răspundere solidară a membrilor asocierii pentru executarea obligațiilor contractuale;
+Durata acordului — minim până la finalizarea contractului + perioada de garanție (54 luni).
+
+#### 15.6.2 Acord de subcontractare
+
+În măsura în care <LIDER> declară subcontractanți (în afara membrilor asocierii), pentru fiecare subcontractant se anexează acord de subcontractare care detaliază:
+Identificare subcontractant + categoria activităților subcontractate;
+Procentaj din valoarea contractului subcontractat;
+Răspundere subcontractant + obligații sale față de ANSVSA (notificare incident, raportare, acces audit);
+Acord plată directă subcontractant de către ANSVSA, conform art. 218 L 98/2016 (dacă se solicită).
+
+#### 15.6.3 Angajament ferm terț susținător
+
+Dacă <LIDER> apelează la capacitatea tehnică sau financiară a unui terț susținător, terțul depune Angajament ferm de punere la dispoziție a resurselor pe toată durata contractului, semnat electronic calificat. Angajamentul include:
+Identificare terț susținător (CUI, sediu, reprezentant legal);
+Detaliere resurse puse la dispoziție (experți, capacitate financiară, echipamente);
+Modalitate concretă de implicare (suport direct, garanție bancară, scrisoare reputație);
+Răspundere terțului susținător pentru îndeplinirea obligațiilor pentru care a fost invocat.
+
+#### 15.6.4 Împuterniciri
+
+Fiecare membru al asocierii emite împuternicire scrisă pentru reprezentantul legal al liderului <LIDER>, autorizându-l să:
+Semneze și depună oferta în numele asocierii;
+Reprezinte asocierea în relația cu ANSVSA pe durata procedurii de evaluare;
+Semneze contractul de achiziție publică în numele asocierii (dacă declarat câștigător);
+Semneze acte adiționale, procese-verbale recepție și orice alte documente contractuale.
+
+### 15.7 Garanția de participare
+
+Conform Fișei de date a achiziției (secțiunea III.1.6.a), garanția de participare este constituită în valoare de 854.000 lei (854 000 RON, fără TVA), reprezentând 1% din valoarea estimată maximă a contractului (85.418.857,53 lei fără TVA).
+Modalitate de constituire: instrument de garantare emis de [Bancă/Instituție de asigurare conform L 98/2016 art. 35] sub forma [scrisoare de garanție bancară irevocabilă / poliță de asigurare], nr. [De completat] din data [De completat], cu valabilitate de minim 10 luni de la termenul limită de depunere a ofertelor (până la data [De completat — t0 + 10 luni]).
+Beneficiar: ANSVSA — Autoritatea Națională Sanitar Veterinară și pentru Siguranța Alimentelor, CUI 16277408, Trezorerie București cont [De completat conform Fișa de date secțiunea III.1.6.a].
+Instrumentul de garantare este IREVOCABIL și NECONDIȚIONAT, plata la prima cerere a ANSVSA, fără condiții suplimentare sau dovezi.
+
+### 15.8 Semnătura electronică calificată
+
+Toate documentele componente ale ofertei (propunerea tehnică, propunerea financiară, declarații, anexe, DUAE) sunt semnate electronic calificat (Qualified Electronic Signature — QES) de reprezentantul legal al <LIDER> și, după caz, de reprezentanții legali ai membrilor asocierii / subcontractanților / terților susținători / experților individuali.
+Semnătura electronică calificată este conformă cu:
+Regulamentul (UE) 910/2014 (eIDAS) — art. 25 alin. (2): efect juridic echivalent semnăturii olografe;
+Legea nr. 455/2001 privind semnătura electronică (transpunere națională);
+Furnizor de servicii de încredere calificat (Qualified Trust Service Provider) certificat de ADR — Autoritatea pentru Digitalizarea României;
+Certificat calificat valid la momentul semnării, cu timestamp calificat asociat conform Reg. eIDAS art. 41.
+
+### 15.9 Pachet declarații anexat ofertei (Anexa K)
+
+Anexa K — Pachet declarații obligatorii cuprinde, în ordinea de la §15.2 al ofertei, toate declarațiile enumerate (15 declarații) plus documentele conexe (acord asociere, acord subcontractare, împuternicirile, angajament terț susținător, dacă e cazul). Fiecare document este:
+Original în format PDF;
+Semnat electronic calificat (eIDAS) de fiecare semnatar identificat;
+Marcat cronologic cu timestamp calificat (RFC 3161);
+Numerotat în corespondență cu §15.2 din prezenta secțiune pentru trasabilitate.
+La verificarea calificării ofertantului clasat pe primul loc, <LIDER> pune la dispoziție prompt (în 5 zile lucrătoare de la cerere) documentele justificative pentru fiecare declarație (certificate, atestate, situații financiare etc.).
