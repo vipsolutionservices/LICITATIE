@@ -1,0 +1,38 @@
+
+## 2. Abordarea și metodologia propuse pentru prestarea serviciilor
+
+
+### 2.1 Principiile fundamentale ale abordării
+
+
+### 2.2 Cadrul metodologic <LIDER>
+
+
+#### 2.2.1 Cadrul de management de proiect (PMI / PMBoK)
+
+
+#### 2.2.2 Cadrul de analiză a cerințelor (BABOK)
+
+
+#### 2.2.3 Cadrul de dezvoltare software (Agile-Scrum hibrid)
+
+
+#### 2.2.4 Practici inginerești (engineering practices)
+
+
+### 2.3 Managementul riscurilor
+
+
+### 2.4 Managementul schimbărilor
+
+
+### 2.5 Procedura de testare și acceptanță
+
+
+### 2.6 Procedura de suport tehnic și SLA
+
+
+### 2.7 Asigurarea calității
+
+
+### 2.8 Sinteza abordării

@@ -1,32 +1,36 @@
 """
-Genereaza matrice_conformitate_pe_capitole.docx (v2).
+Genereaza matrice_conformitate_pe_capitole.docx (v4 — abordare surgicala).
 
-Modificari fata de v1:
- - Eliminata coloana "Cap. CdS" (redundanta cu heading)
- - Heading capitol include si NUMELE capitolului (extras din rândurile-sectiune ale tabelului sursa)
- - Coloana 3 = "Raspuns ofertant — mod indeplinire" (label conform anexa F sursa)
- - Intro extins inspirat din anexa F sursa (titlu + descriere + mod utilizare)
- - Stiluri font / dimensiuni aliniate cu sursa (16/14/11/10 pt)
+Strategie: copiez EXACT structura din anexa_f_conformitate - old.docx
+si fac doar 2 modificari minime, pastrand formatare/layout/coloane/section headers:
 
-Surse:
- - anexa_f_conformitate - old.docx — cerinte + nume capitole (rândurile-sectiune)
- - .claude/build_matrice.py — MAP cap -> produs (Sinteza xlsx, cu VOGO TECHNOLOGY -> <LIDER>)
+ 1. Replace VOGO TECHNOLOGY / VOGO -> <LIDER> in TOT textul (paragrafe + tabel).
+    Pastreaza formatarea prin manipulare la nivel de run.
+
+ 2. Pre-completare coloana 3 "Raspuns ofertant" cu produsul din Sinteza
+    (MAP cap -> produs). Coloana 4 "Document referinta" ramane goala.
+
+Rezultat: document IDENTIC cu sursa, dar cu raspunsuri pre-completate pe baza Sinteza.
 """
 import re
 import sys
-from collections import defaultdict
+import shutil
 from pathlib import Path
 
 sys.stdout.reconfigure(encoding='utf-8')
 
 from docx import Document
-from docx.shared import Pt
+from docx.oxml.ns import qn
 
 ROOT = Path(r"C:\Users\adria\Documents\Claude\Projects\Licitatie 1\doc-output\oferta")
-SRC_REQ = ROOT / "anexa_f_conformitate - old.docx"
+SRC = ROOT / "anexa_f_conformitate - old.docx"
 OUT = ROOT / "matrice_conformitate_pe_capitole.docx"
 
 
+# MAP cap CdS -> Produs din Sinteza, cu <LIDER> in loc de VOGO TECHNOLOGY.
+# Pentru "VOGO Enterprise Suite" pastram numele de PRODUS asa cum apare in Sinteza,
+# pentru ca este nume de produs nu de companie (acest fisier va trece prin replace
+# VOGO->LIDER ulterior, deci scriu deja "<LIDER> Enterprise Suite" pentru consistenta).
 MAP = {
     '3.4':         '<LIDER> (coordonare integrator)',
     '3.4.1.1':     '<LIDER> (arhitect sistem)',
@@ -34,16 +38,16 @@ MAP = {
     '3.4.1.3':     'Toate produsele C. Securitate + <LIDER> (conformitate legala)',
     '3.4.2.1':     'FURNIZOR LIMS COTS',
     '3.4.2.2':     'ZIPPER',
-    '3.4.2.3':     'ZIPPER / VOGO Enterprise Suite',
+    '3.4.2.3':     'ZIPPER / <LIDER> Enterprise Suite',
     '3.4.2.5':     'Microsoft Power BI / SSRS / SSAS + Microsoft SSIS',
-    '3.4.2.6':     'VOGO Enterprise Suite',
-    '3.4.2.7':     'VOGO Enterprise Suite',
-    '3.4.2.8':     'FURNIZOR GIS + VOGO Enterprise Suite',
-    '3.4.2.9':     'VOGO Enterprise Suite',
-    '3.4.2.10':    'VOGO Enterprise Suite',
-    '3.4.2.11':    'VOGO Enterprise Suite (aplicatie mobila)',
-    '3.4.2.12':    'VOGO Enterprise Suite',
-    '3.4.2.14':    'Oracle Service Bus + Mirth Connect + VOGO Enterprise Suite',
+    '3.4.2.6':     '<LIDER> Enterprise Suite',
+    '3.4.2.7':     '<LIDER> Enterprise Suite',
+    '3.4.2.8':     'FURNIZOR GIS + <LIDER> Enterprise Suite',
+    '3.4.2.9':     '<LIDER> Enterprise Suite',
+    '3.4.2.10':    '<LIDER> Enterprise Suite',
+    '3.4.2.11':    '<LIDER> Enterprise Suite (aplicatie mobila)',
+    '3.4.2.12':    '<LIDER> Enterprise Suite',
+    '3.4.2.14':    'Oracle Service Bus + Mirth Connect + <LIDER> Enterprise Suite',
     '3.4.3':       '<LIDER> (arhitect sistem)',
     '3.4.3.1':     'RHEL 9 / Oracle Linux 9 + Win Server 2022 DC (Cloud Guvernamental)',
     '3.4.3.2.1':   'NGINX Plus',
@@ -63,9 +67,9 @@ MAP = {
     '3.4.3.3.1.5': 'ZIPPER',
     '3.4.3.3.1.6': 'ZIPPER',
     '3.4.3.3.1.7': 'ZIPPER',
-    '3.4.3.3.2':   'VOGO Enterprise Suite',
-    '3.4.3.3.2.1': 'VOGO Enterprise Suite (chatbot)',
-    '3.4.3.3.2.2': 'VOGO Enterprise Suite (aplicatie mobila)',
+    '3.4.3.3.2':   '<LIDER> Enterprise Suite',
+    '3.4.3.3.2.1': '<LIDER> Enterprise Suite (chatbot)',
+    '3.4.3.3.2.2': '<LIDER> Enterprise Suite (aplicatie mobila)',
     '3.4.3.3.3':   'FURNIZOR LIMS COTS',
     '3.4.3.3.3.1': 'FURNIZOR LIMS COTS',
     '3.4.3.3.3.2': 'Mirth Connect',
@@ -94,7 +98,7 @@ MAP = {
     '3.4.4.8':     '<LIDER> (Expert testare)',
     '3.4.4.9':     '<LIDER> (Experti instruire)',
     '3.4.4.10':    '<LIDER> (echipa de punere in productie)',
-    '3.4.5':       'Keycloak Enterprise + VOGO Enterprise Suite',
+    '3.4.5':       'Keycloak Enterprise + <LIDER> Enterprise Suite',
     '3.4.6':       'Toate produsele C. Securitate',
     '3.4.7':       'Toate produsele C. Securitate + <LIDER> (GDPR)',
     '3.4.8':       'Echipament hardware (Laptop EU Ecolabel) + furnizori ambalaje/livrare',
@@ -115,208 +119,133 @@ def get_produs(cap):
     return '<LIDER> (de validat)'
 
 
-def cap_key(cap):
-    parts = cap.split('.')
-    out = []
-    for p in parts:
-        try:
-            out.append(int(p))
-        except ValueError:
-            out.append(0)
-    return tuple(out)
+# ============================================================
+# Replace VOGO -> <LIDER> la nivel de paragraf, pastreaza formatarea
+# Aceeasi tehnica ca .claude/_replace_lider.py (folosita de A3)
+# ============================================================
+PATTERNS = [
+    (re.compile(r"VOGO\s+ENTERPRISE\s+BUSINESS\s+SUITE", re.IGNORECASE), "<LIDER> Enterprise Suite"),
+    (re.compile(r"VOGO\s+TECHNOLOGY", re.IGNORECASE), "<LIDER>"),
+    (re.compile(r"\bVOGO\s+Enterprise\s+Suite\b", re.IGNORECASE), "<LIDER> Enterprise Suite"),
+    (re.compile(r"\bVOGO\b", re.IGNORECASE), "<LIDER>"),
+]
 
 
-def normalize_cap(cap):
-    m = re.search(r'(3\.4(?:\.\d+)*)', cap or '')
-    if m:
-        return m.group(1)
-    return (cap or '').strip()
+def replace_in_text(text):
+    total = 0
+    for pat, repl in PATTERNS:
+        text, n = pat.subn(repl, text)
+        total += n
+    return text, total
 
 
-def parse_source():
-    """Citeste cerinte + numele capitolelor.
-
-    Returneaza:
-     - cerinte: list[dict(nr, cap, cerinta)]
-     - cap_names: dict[cap_normalizat] -> "Cap. 3.4.X — Nume Capitol" (cu whitespace normalizat)
-    """
-    doc = Document(str(SRC_REQ))
-    t = doc.tables[0]
-    cerinte = []
-    cap_names = {}
-    for row in t.rows:
-        cells = row.cells
-        texts = [c.text.strip() for c in cells]
-        # Header sectiune: toate celulele au acelasi text si incepe cu "Cap."
-        if len(cells) >= 2 and texts[0] == texts[1] and texts[0].startswith('Cap.'):
-            full = re.sub(r'\s+', ' ', texts[0]).strip()
-            # Extrag "Cap. 3.4.X.Y" + restul
-            m = re.match(r'^Cap\.\s+(3\.4(?:\.\d+)*)\s*[—-]\s*(.+)$', full)
-            if m:
-                cap_norm = m.group(1)
-                cap_names[cap_norm] = full
-            continue
-        # Header tabel
-        if texts[0] == 'Nr.':
-            continue
-        # Cerinta
-        if len(texts) < 3:
-            continue
-        nr = texts[0]
-        cap = texts[1]
-        cerinta = texts[2]
-        if not nr.isdigit():
-            continue
-        cerinte.append({'nr': nr, 'cap': cap, 'cerinta': cerinta})
-    return cerinte, cap_names
+def replace_in_paragraph(paragraph):
+    """Aplica regex pe textul paragrafului. Pastreaza formatul primului run."""
+    full = paragraph.text
+    new_text, n = replace_in_text(full)
+    if n == 0:
+        return 0
+    runs = paragraph.runs
+    if not runs:
+        return 0
+    runs[0].text = new_text
+    for r in runs[1:]:
+        r.text = ""
+    return n
 
 
-def set_run_default(run, size=10):
-    """Setează font Calibri și dimensiunea."""
-    run.font.size = Pt(size)
+def walk_replace(tables, total_ref):
+    for t in tables:
+        for row in t.rows:
+            for cell in row.cells:
+                for p in cell.paragraphs:
+                    total_ref[0] += replace_in_paragraph(p)
+                walk_replace(cell.tables, total_ref)
 
 
-def add_par(doc, text, size=10, bold=False, space_before=0, space_after=4):
-    p = doc.add_paragraph()
-    p.paragraph_format.space_before = Pt(space_before)
-    p.paragraph_format.space_after = Pt(space_after)
-    r = p.add_run(text)
-    r.font.size = Pt(size)
-    if bold:
-        r.bold = True
-    return p
+# ============================================================
+# Pre-completare col Raspuns ofertant pe baza MAP
+# Coloane in tabel original: 0=Nr | 1=Cap. CDS | 2=Cerinta | 3=Raspuns | 4=DocRef
+# ============================================================
+
+def set_cell_text(cell, text, pt_size=8.5):
+    """Curata cell si pune textul, pastrand fontul Arial."""
+    # Sterg toate paragrafele existente (lasand unul gol)
+    for p in cell.paragraphs:
+        p_el = p._element
+        for r in list(p.runs):
+            r._element.getparent().remove(r._element)
+    # Adaug noul text intr-un singur paragraf
+    p = cell.paragraphs[0] if cell.paragraphs else cell.add_paragraph()
+    new_run = p.add_run(text)
+    # Aplic font Arial + size (mostenire docDefaults asigura asta dar fac explicit)
+    new_run.font.name = "Arial"
+    from docx.shared import Pt
+    new_run.font.size = Pt(pt_size)
 
 
 def main():
-    if not SRC_REQ.exists():
-        raise SystemExit(f"NOT FOUND: {SRC_REQ}")
-    print(f"Citesc cerinte din {SRC_REQ.name}...")
-    cerinte, cap_names = parse_source()
-    print(f"Cerinte gasite: {len(cerinte)}")
-    print(f"Capitole cu nume identificate: {len(cap_names)}")
+    if not SRC.exists():
+        raise SystemExit(f"NOT FOUND: {SRC}")
 
-    by_cap = defaultdict(list)
-    for c in cerinte:
-        cap = normalize_cap(c['cap'])
-        by_cap[cap].append(c)
-    sorted_caps = sorted(by_cap.keys(), key=cap_key)
-    print(f"Capitole distincte cu cerinte: {len(sorted_caps)}")
+    # Step 1: Copy fisierul sursa (pastram TOATA structura)
+    shutil.copy(SRC, OUT)
+    print(f"Copiat {SRC.name} -> {OUT.name}")
 
-    doc = Document()
+    # Step 2: Deschid copia si fac modificarile
+    doc = Document(str(OUT))
 
-    # ============================================================
-    # INTRO — inspirat din anexa F sursa
-    # ============================================================
-    add_par(doc, "MATRICEA DE CONFORMITATE — VARIANTĂ PE CAPITOLE",
-            size=16, bold=True, space_before=0, space_after=6)
-    add_par(doc, "Cerințe SIDISVA grupate pe capitole CdS, cu produsul recomandat pre-completat",
-            size=14, bold=True, space_after=8)
-    add_par(doc, f"SIDISVA — CN1089237 — Total cerințe: {len(cerinte)} "
-                 f"(extrase automat din cap. 3.4.x.x al Caietului de Sarcini nr. 7574/CP/2025) "
-                 f"— grupate pe {len(sorted_caps)} capitole distincte.",
-            size=10, space_after=12)
+    # 2a. Replace VOGO -> <LIDER> peste tot
+    total = [0]
+    for p in doc.paragraphs:
+        total[0] += replace_in_paragraph(p)
+    walk_replace(doc.tables, total)
+    # Headers / footers
+    for section in doc.sections:
+        for hdr in (section.header, section.first_page_header, section.even_page_header):
+            for p in hdr.paragraphs:
+                total[0] += replace_in_paragraph(p)
+            walk_replace(hdr.tables, total)
+        for ftr in (section.footer, section.first_page_footer, section.even_page_footer):
+            for p in ftr.paragraphs:
+                total[0] += replace_in_paragraph(p)
+            walk_replace(ftr.tables, total)
+    print(f"Replace VOGO -> <LIDER>: {total[0]} ocurente")
 
-    add_par(doc, "Mod de utilizare:", size=11, bold=True, space_before=8, space_after=4)
-    add_par(doc,
-        "• Pentru fiecare cerință se completează coloana \"Răspuns ofertant — mod îndeplinire\" "
-        "cu descrierea concretă a modului de îndeplinire (NU \"OK\" / \"conform\" / \"soluția răspunde\"). "
-        "Coloana este pre-completată automat cu produsul / componenta / echipa responsabilă "
-        "din partea consorțiului condus de <LIDER>, conform mapării din "
-        "Lista_Software_SIDISVA.xlsx, sheet \"Sinteza\", coloana \"Produs recomandat (oferta)\".",
-        size=10, space_after=4)
-    add_par(doc,
-        "• Fiecare responsabil va detalia răspunsul în propunerea tehnică, indicând în clar "
-        "modul în care produsul propus îndeplinește cerința (configurare, funcționalitate nativă, "
-        "dezvoltare adițională etc.).",
-        size=10, space_after=4)
-    add_par(doc,
-        "• Răspunsuri prin simpla repetare a cerinței (cu schimbarea timpului verbal) NU sunt acceptate.",
-        size=10, space_after=4)
-    add_par(doc,
-        "• Hyperlink-uri către documentația producătorului fără citarea textului concret NU sunt acceptate.",
-        size=10, space_after=4)
-    add_par(doc,
-        "• Lipsa răspunsurilor sau răspunsuri incomplete pot conduce la declararea ofertei ca neconformă.",
-        size=10, space_after=12)
+    # 2b. Pre-completare coloana 3 (Raspuns ofertant) cu produsul din MAP
+    t = doc.tables[0]
+    populated = 0
+    skipped_header = 0
+    for ri, row in enumerate(t.rows):
+        cells = row.cells
+        if len(cells) < 5:
+            continue
+        c0 = cells[0].text.strip()
+        c1 = cells[1].text.strip()
+        # Header tabel: Nr. + Cap. CDS
+        if c0 == 'Nr.':
+            continue
+        # Header sectiune Cap.: c0 == c1
+        if c0 == c1 and c0.startswith('Cap.'):
+            skipped_header += 1
+            continue
+        # Rand cerinta normal
+        if not c0.isdigit():
+            continue
+        cap = c1
+        produs = get_produs(cap)
+        # Set in cell 3 (Raspuns ofertant)
+        set_cell_text(cells[3], produs, pt_size=8.5)
+        # Cell 4 (Document referinta) - lasa goala
+        set_cell_text(cells[4], "", pt_size=8.5)
+        populated += 1
+    print(f"Cerinte pre-completate cu produs: {populated}")
+    print(f"Sectiuni header sarite: {skipped_header}")
 
-    add_par(doc,
-        f"Document de uz intern, generat automat. Variantă \"pe capitole\" pentru distribuție "
-        f"către responsabili (fiecare furnizor completează doar răspunsurile pentru cerințele "
-        f"alocate prin coloana de produs). Pentru matricea completă cu toate cerințele într-un "
-        f"singur tabel (formularul tip Anexă F), vezi anexa_f_conformitate.docx.",
-        size=10, space_after=18)
-
-    # ============================================================
-    # PER CAPITOL: heading cu nume + tabel 3 coloane
-    # ============================================================
-    for cap in sorted_caps:
-        # Heading capitol: "Capitolul X.Y — Nume"
-        full_name = cap_names.get(cap)
-        if full_name:
-            # full_name = "Cap. 3.4.2.6 — Funcționalități..." → schimb "Cap." cu "Capitolul"
-            heading_text = full_name.replace("Cap. ", "Capitolul ", 1)
-        else:
-            heading_text = f"Capitolul {cap}"
-
-        h = doc.add_paragraph()
-        h.paragraph_format.space_before = Pt(20)
-        h.paragraph_format.space_after = Pt(6)
-        r = h.add_run(heading_text)
-        r.bold = True
-        r.font.size = Pt(13)
-
-        # Tabel cerinte: 3 coloane (Nr / Cerinta / Raspuns)
-        rows = by_cap[cap]
-        t = doc.add_table(rows=1 + len(rows), cols=3)
-        try:
-            t.style = "Table Grid"
-        except KeyError:
-            pass
-
-        hdr_titles = ["Nr.", "Cerință (citată din caietul de sarcini)",
-                      "Răspuns ofertant — mod îndeplinire"]
-        for i, h_text in enumerate(hdr_titles):
-            cell = t.rows[0].cells[i]
-            cell.text = ""
-            p = cell.paragraphs[0]
-            rr = p.add_run(h_text)
-            rr.bold = True
-            rr.font.size = Pt(10)
-
-        for ri, c in enumerate(rows, start=1):
-            cells = t.rows[ri].cells
-            # Nr
-            cells[0].text = ""
-            r0 = cells[0].paragraphs[0].add_run(c['nr'])
-            r0.font.size = Pt(9)
-            # Cerinta
-            cells[1].text = ""
-            r1 = cells[1].paragraphs[0].add_run(c['cerinta'])
-            r1.font.size = Pt(9)
-            # Raspuns ofertant — mod indeplinire (= produs din Sinteza)
-            produs = get_produs(normalize_cap(c['cap']))
-            cells[2].text = ""
-            r2 = cells[2].paragraphs[0].add_run(produs)
-            r2.font.size = Pt(9)
-
-        # Footer capitol (subțire)
-        f = doc.add_paragraph()
-        f.paragraph_format.space_before = Pt(4)
-        f.paragraph_format.space_after = Pt(0)
-        fr = f.add_run(f"({len(rows)} cerințe în acest capitol)")
-        fr.italic = True
-        fr.font.size = Pt(9)
-
+    # Salvez
     doc.save(str(OUT))
     size = OUT.stat().st_size
     print(f"\nOK | {OUT.name} salvat: {size} bytes ({size/1024:.1f} KB)")
-    print(f"Total: {len(sorted_caps)} capitole, {len(cerinte)} cerinte.")
-    # Verificare nume capitole
-    missing_names = [c for c in sorted_caps if c not in cap_names]
-    if missing_names:
-        print(f"\n[INFO] Capitole fara nume identificat (folosim doar numarul):")
-        for c in missing_names:
-            print(f"  - {c}")
 
 
 if __name__ == "__main__":

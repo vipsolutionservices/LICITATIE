@@ -17,7 +17,9 @@
       "Bash(grep -E \"~\\\\\\\\\\\\$|4-Descrierea\")",
       "PowerShell(Get-ChildItem -Path .claude -Force -Recurse -File | Where-Object { $_.LastWriteTime -gt \\(Get-Date\\).AddMinutes\\(-30\\) } | Sort-Object LastWriteTime -Descending | Select-Object @{N='Path';E={$_.FullName.Replace\\(\\(Get-Location\\).Path + '\\\\',''\\)}}, @{N='Modified';E={$_.LastWriteTime.ToString\\('HH:mm:ss'\\)}}, @{N='KB';E={[math]::Round\\($_.Length/1KB,2\\)}} | Format-Table -AutoSize)",
       "Bash(grep -E \"~\\\\\\\\\\\\$1-Rez\")",
-      "Bash(grep -E \"~\\\\\\\\\\\\$13-Mana\")"
+      "Bash(grep -E \"~\\\\\\\\\\\\$13-Mana\")",
+      "Bash(grep -E \"~\\\\\\\\\\\\$2-Abor\")",
+      "Bash(PYTHONIOENCODING=utf-8 python *)"
     ]
   },
   "statusLine": {

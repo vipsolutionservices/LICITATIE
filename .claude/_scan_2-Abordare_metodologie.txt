@@ -1,0 +1,380 @@
+
+## 2. Abordarea și metodologia propuse pentru prestarea serviciilor
+
+Prezentul capitol descrie abordarea și metodologia pe care <LIDER> o aplică pentru implementarea Sistemului Informatic Digitalizat în domeniul Sanitar Veterinar și pentru Siguranța Alimentelor (SIDISVA), răspunzând integral la Factorul de evaluare nr. 3 — Metodologia de implementare a contractului.
+Activitatea de management de proiect <LIDER> se desfășoară conform unui cadru de management de proiect (framework) recunoscut internațional de organisme profesionale specifice — Project Management Institute (PMI). Metodologia <LIDER> se bazează pe practicile și conceptele optime utilizate de PMI, conform standardului A Guide to the Project Management Body of Knowledge (PMBoK) — referință globală, având peste 2 milioane de accesări la nivel mondial. Pentru activitățile de analiză a cerințelor, aplicăm cadrul BABOK (Business Analysis Body of Knowledge); pentru dezvoltarea software, cadrul hibrid Agile-Scrum organizat conform SAFe pentru programe cu multiple echipe.
+
+### 2.1 Principiile fundamentale ale abordării
+
+Abordarea propusă pentru implementarea SIDISVA se bazează pe principiile arhitecturale enunțate la cap. 3.4.3 din Caietul de Sarcini, pe care le adoptăm integral și le aplicăm consecvent pe parcursul întregului ciclu de viață al proiectului:
+Principiul legalității — întreaga soluție este proiectată și implementată în conformitate cu legislația națională (L 98/2016, L 190/2018 GDPR, L 362/2018 securitate cibernetică, L 455/2001 semnătură electronică, OUG 89/2022 cloud guvernamental) și standardele europene (eIDAS, NIS2, GDPR, EIF — European Interoperability Framework);
+Principiul divizării arhitecturii pe nivele — separare strictă între nivelele prezentare, business logic, integrare, date și infrastructură, cu interfețe standard între nivele;
+Principiul arhitecturii bazate pe servicii (SOA / microservicii) — funcționalitățile sunt distribuite în servicii autonome, independente, comunicând prin API REST/SOAP/HL7 FHIR;
+Principiul datelor sigure — toate datele intră în sistem doar prin canale autentificate (ROeID, eIDAS, autentificare locală cu MFA) și auditate complet (logging end-to-end);
+Principiul securității informaționale — implementare „Security by Design" și „Privacy by Design", conform OWASP Top 10, NIST CSF, ISO 27001, GDPR;
+Principiul transparenței — utilizarea exclusivă a tehnologiilor și standardelor deschise (REST, OpenAPI, JSON, XML, HL7, OAuth2, OpenID Connect);
+Principiul expansibilității — arhitectura permite adăugarea de noi module/servicii fără modificarea componentelor existente;
+Principiul scalabilității — arhitectura cloud-native asigură scalare orizontală automată (auto-scaling) în funcție de încărcare;
+Principiul simplității și comodității utilizării — interfețe UX/UI proiectate conform standardelor WCAG 2.1 AA, Material Design / GOV.UK Design System;
+Principiul integrității, plenitudinii și veridicității datelor — validare la introducere, control referențial, audit trail complet, mecanisme de detectare anomalii.
+
+### 2.2 Cadrul metodologic <LIDER>
+
+Pentru implementarea cu succes a unui proiect de complexitatea SIDISVA, <LIDER> propune o metodologie hibridă care combină rigoarea managementului clasic de proiect (PMI/PMBoK) pentru guvernare, raportare și gestionare contractuală, cu agilitatea metodelor Agile-Scrum pentru execuția propriu-zisă a activităților de dezvoltare software, și cu BABOK pentru extragerea și gestionarea cerințelor.
+
+#### 2.2.1 Cadrul de management de proiect (PMI / PMBoK)
+
+Procedura de management de proiect <LIDER> include următoarele grupe de procese, în conformitate cu PMBoK:
+
+[TABLE]
+| Proces / Fază | Activități și livrabile |
+| Inițiere | Project Charter, identificarea părților interesate, Kick-off meeting, validarea constrângerilor CS, document de inițiere (PID) |
+| Planificare | WBS (Top-Down), planificare iterativă, plan de management de proiect, planuri subsidiare (risc, calitate, comunicare, schimbări), MS Project Server / Jira |
+| Execuție | Coordonare echipe, managementul livrabilelor, executare conform plan, asigurarea calității proceselor și produselor |
+| Monitorizare & Control | Status reports (PR-012C), tracking buget/timp/scop/calitate, registru riscuri actualizat lunar, escaladări către Steering Committee |
+| Închidere | Recepție finală, lessons learned, transfer cunoștințe, închidere contracte, raportul final |
+[/TABLE]
+
+Planul de management al proiectului — întocmit în concordanță cu metodologia <LIDER> de Management de Proiect — stabilește detaliat modalitățile și mijloacele prin care se planifică, execută, monitorizează și controlează proiectul. Dezvoltarea acestui plan este un proces iterativ: pe măsură ce proiectul avansează, planul este completat, actualizat și detaliat. Responsabilitatea privind ținerea sub control a planului — efectuarea actualizărilor, difuzarea lor și urmărirea modificărilor — revine Managerului de Proiect <LIDER>, în colaborare strânsă cu Liderul de proiect desemnat de ANSVSA.
+
+#### 2.2.2 Cadrul de analiză a cerințelor (BABOK)
+
+Pentru extragerea, validarea și gestionarea cerințelor ANSVSA, <LIDER> aplică cadrul BABOK (Business Analysis Body of Knowledge) — în special zonele de cunoștințe Extragere cerințe (Elicitation), Analiza cerințelor și Trasabilitate. Pașii canonici:
+Pregătire extragere cerințe — definirea părților interesate, planificarea sesiunilor, pregătirea șabloanelor;
+Conducere activitate de extragere — workshop-uri, interviuri, chestionare, observație directă a proceselor curente;
+Confirmare rezultate — validare scrisă cu Product Owner-ul ANSVSA, semnătură pe document de analiză;
+Specificare și modelare cerințe — UML (Use-Case, State-Chart, Activity, Component, Deployment), BPMN pentru procese, Data Flow Diagrams;
+Trasabilitate completă pe traseul Caiet de Sarcini → Document de Analiză → Scenarii de Testare → Recepție finală.
+
+#### 2.2.3 Cadrul de dezvoltare software (Agile-Scrum hibrid)
+
+Pentru activitățile de dezvoltare propriu-zise, <LIDER> aplică metoda Scrum cu sprint-uri de 2 săptămâni, organizate într-un Program SAFe (Scaled Agile Framework) deoarece proiectul implică multiple echipe de dezvoltare (LIMS, DMS, Portal, GIS, Integrări, Securitate), coordonare cross-functional și necesitatea de livrabile incrementale demonstrabile la fiecare 2-3 luni.
+Backlog refinement săptămânal — clarificarea cerințelor cu Product Owner-ul desemnat de ANSVSA;
+Sprint planning la 2 săptămâni — angajament cu obiective măsurabile;
+Daily stand-ups (15 minute) — sincronizare echipa de dezvoltare;
+Sprint review — demo pentru ANSVSA cu validarea funcționalităților;
+Sprint retrospective — îmbunătățire continuă a procesului.
+
+#### 2.2.4 Practici inginerești (engineering practices)
+
+Calitatea livrabilelor <LIDER> este asigurată prin următoarele practici tehnice consacrate:
+Test-Driven Development (TDD) — testele unitare sunt scrise înainte de cod;
+Continuous Integration / Continuous Deployment (CI/CD) — pipeline-uri automate de build/test/deploy;
+Code review obligatoriu pentru fiecare modificare — minim 2 reviewers;
+Standarde de cod: ISO/IEC 11179-4:2004 + ISO/IEC 11179-5:2005 (naming and data identification principles);
+Automatizare testare: minim 80% acoperire test cases prin teste automate;
+Securitate by-design: SAST + DAST automate, pen-testing periodic;
+Containerizare end-to-end: Docker images + Kubernetes/OpenShift orchestration;
+Infrastructure as Code: Terraform / Ansible pentru reproducibilitate medii.
+
+### 2.3 Managementul riscurilor
+
+<LIDER> aplică pentru SIDISVA o procedură structurată de management al riscurilor conform PMBoK + ISO 31000. Strategia de management al riscului include:
+Identificarea riscurilor — workshop-uri inițiale și continue cu echipa de proiect, brainstorming, lista de verificare prin tipuri de riscuri (tehnologice, organizaționale, externe, contractuale, integrare);
+Analiza calitativă — matricea probabilitate × impact (5×5), categorizare în Amenințări / Oportunități;
+Analiza cantitativă — pentru riscurile critice, estimare în zile suplimentare / cost suplimentar prin simulare Monte-Carlo sau analiză de senzitivitate;
+Planificarea răspunsului — pentru fiecare risc: strategie (evitare, transfer, mitigare, acceptare), plan de mitigare detaliat, plan de contingență, proprietar (Risk Owner);
+Monitorizare și control — registru de riscuri actualizat lunar, raport către Steering Committee, reevaluare la fiecare milestone.
+
+### 2.4 Managementul schimbărilor
+
+Pentru gestionarea schimbărilor de scop, timp sau buget pe parcursul implementării, <LIDER> aplică o procedură formală de Change Management, cu următorii pași:
+Identificarea schimbării — orice parte poate iniția o cerere prin formularul Change Request (CR);
+Evaluare impact — analiza impactului asupra scopului, timpului, bugetului, calității și a celorlalte CR-uri în curs;
+Decizie Change Control Board — Comitetul de schimbare (CCB) format din PM <LIDER> + reprezentant ANSVSA aprobă/respinge/amână schimbarea;
+Implementare — după aprobare, schimbarea este planificată, executată și integrată în Baseline-ul proiectului;
+Documentare — toate CR-urile sunt arhivate în registrul de schimbări al proiectului.
+
+### 2.5 Procedura de testare și acceptanță
+
+Procedura de testare și acceptanță <LIDER> pentru SIDISVA respectă standardele ISTQB și include următoarele faze:
+Testare unitară — efectuată de dezvoltatori, TDD, acoperire minim 80%;
+Testare de integrare — verifică interacțiunea între componente și module;
+Testare funcțională (FAT — Factory Acceptance Test) — la <LIDER>, pe scenarii derivate din cerințele CS;
+Testare de acceptanță utilizator (UAT) — la ANSVSA, pe scenarii agreate în comun, semnătură pe fiecare scenariu;
+Testare de performanță — load testing, stress testing, capacity planning;
+Testare de securitate (Pen-Test) — efectuată de echipa internă <LIDER> Security + audit extern independent;
+Testare de Disaster Recovery — simulare incidente, validare RPO/RTO;
+Testare de portabilitate și conformitate Cloud Guvernamental.
+La finalul fiecărei faze, livrabilele sunt validate prin semnătură electronică calificată de către reprezentanții ambelor părți (<LIDER> și ANSVSA). Trasabilitatea completă a cerințelor pe traseul Caiet de Sarcini → Document de Analiză → Scenarii de Testare → Recepție Finală este asigurată prin Matricea de Trasabilitate a Cerințelor (RTM), instrument central al managementului calității proiectului.
+
+### 2.6 Procedura de suport tehnic și SLA
+
+<LIDER> oferă servicii de suport tehnic pe perioada garanției de 3 ani de la trecerea în producție, prin următoarele canale:
+Aplicație de suport și issue tracking online (Jira Service Management) — punct unic de intrare 24×7;
+Număr de suport tehnic dedicat — disponibil L-V 08:00-18:00 ora României;
+Număr de urgență — disponibil 24×7 pentru incidente critice (nivel 1);
+E-mail suport tehnic — răspuns garantat în maximum 1 oră pentru incidente critice.
+Parametrii SLA garantați:
+
+[TABLE]
+| Nivel severitate | Descriere | Timp răspuns | Soluție provizorie | Remediere |
+| Critic (nivel 1) | Sistem total nefuncțional sau funcție majoră blocată | Max 1 oră | 12 ore | 2 zile |
+| Major (nivel 2) | Eroare ce afectează majoritatea funcționalităților | Max 2 ore | 1 zi | 3 zile |
+| Mediu (nivel 3) | Eroare la o funcție/proces, sistem parțial nefuncțional | Max 3 ore | 2 zile | 5 zile |
+| Minor (nivel 4) | Eroare care afectează o funcție dar nu sistemul în ansamblu | Max 4 ore | 3 zile | 10 zile |
+[/TABLE]
+
+
+### 2.7 Asigurarea calității
+
+Procedurile interne <LIDER> sunt certificate ISO 9001:2015. Asigurarea calității proiectului SIDISVA include:
+Quality Plan dedicat — definește standardele de calitate, metricile, criteriile de acceptanță;
+Quality Assurance (QA) — review-uri tehnice independente la finalul fiecărei etape, audituri interne;
+Quality Control (QC) — testare pe toate nivelurile, inspecții ale livrabilelor, verificarea conformității cu cerințele;
+Lessons Learned — sesiuni post-proiect și post-milestone pentru îmbunătățire continuă;
+Matricea de Conformitate (vezi Anexa F) — punct cu punct, pentru fiecare cerință din Caietul de Sarcini.
+
+### 2.8 Sinteza abordării
+
+Metodologia și planul de proiect <LIDER> sunt special gândite și adaptate pentru specificul contractului SIDISVA — respectând cerințele din Caietul de Sarcini, inclusiv livrabilele solicitate pentru atingerea obiectivelor contractului. Prin integrarea cadrelor recunoscute internațional (PMI/PMBoK + BABOK + Agile-Scrum + ISO 9001 + ISTQB) cu experiența practică a echipei noastre, ne asigurăm că vom respecta atât indicatorii calitativi cât și indicatorii de buget și timp ai proiectului.
+2.9 Consorțiul ofertant și repartizarea responsabilităților
+Pentru implementarea SIDISVA — un sistem cu 14 componente funcționale interconectate, care necesită expertize tehnologice variate (DMS, LIMS, GIS, BI, Portal web, aplicații mobile native iOS/Android, integrări cu sisteme guvernamentale, securitate cibernetică multi-nivel) — oferta este depusă printr-o asociere între <LIDER> (în calitate de Lider de consorțiu / Lead Contractor) și 8 furnizori specializați, fiecare titular pe o componentă tehnologică principală. Această structură răspunde direct cerințelor din cap. 8 al Caietului de Sarcini privind asigurarea expertizei specifice pentru fiecare categorie de produs/serviciu, în timp ce coordonarea unitară a livrabilelor este responsabilitatea exclusivă a Liderului consorțiului.
+2.9.1 Componența consorțiului
+Tabelul de mai jos sintetizează repartizarea celor 9 componente tehnologice principale ale SIDISVA pe membri ai consorțiului și produsele/tehnologiile propuse pentru fiecare. Componentele LIMS și DMS sunt livrate cu licență perpetuă și cod sursă integral, în conformitate cu cerințele cap. 3.4.3.3.4 din Caietul de Sarcini.
+
+[TABLE]
+| Rol în consorțiu | Membru | Componenta SIDISVA | Produs / Tehnologie propusă |
+| Lider asociere — Lead Contractor | <LIDER> | Coordonare consorțiu, management general contract, integrare globală | — |
+| Furnizor DMS | <FURNIZOR DMS> | Document Management System (cap. 3.4.2.2, 3.4.3.3.1) | ZIPPER DMS — licență perpetuă + cod sursă integral, utilizatori nelimitați |
+| Furnizor Portal | <FURNIZOR PORTAL> | Portal Servicii Publice (cap. 3.4.2.6, 3.4.3.3.2) | Platforma Enterprise Suite (modul Portal) — licență perpetuă |
+| Furnizor Chatbot | <FURNIZOR CHATBOT> | Chatbot AI conversațional NLP în limba română (cap. 3.4.3.3.2.1) | Platforma Enterprise Suite (modul Chatbot AI / NLP RO) |
+| Furnizor App mobilă | <FURNIZOR APP MOBILĂ> | Aplicații mobile native iOS + Android + PWA (cap. 3.4.3.3.2.2) | Platforma Enterprise Suite (modul Mobile — Swift/SwiftUI + Kotlin/Compose + PWA) |
+| Furnizor LIMS | <FURNIZOR LIMS> | Laboratory Information Management System (cap. 3.4.2.1, 3.4.3.3.3) | LIMS COTS — perpetuă + cod sursă + suport L2/L3 3 ani |
+| Furnizor ETL | <FURNIZOR ETL> | Extract-Transform-Load (cap. 3.4.3.2.5) | Microsoft SSIS — 16 cores |
+| Furnizor BI | <FURNIZOR BI> | Business Intelligence, dashboards, raportare (cap. 3.4.3.2.6, 3.4.2.5) | Microsoft Power BI + SSRS + SSAS — 50 utilizatori |
+| Furnizor GIS | <FURNIZOR GIS> | Geographic Information System (cap. 3.4.2.4, 3.4.3.2.8) | Soluție GIS dedicată — 1 server + 50 editori |
+| Furnizor ESB | <FURNIZOR ESB> | Enterprise Service Bus (cap. 3.4.3.2.9) | Oracle Service Bus — cluster activ-pasiv 16 cores |
+[/TABLE]
+
+2.9.2 Avantajele structurii consorțiale propuse
+Această structură răspunde la 4 obiective fundamentale impuse direct sau indirect de Caietul de Sarcini și asigură reducerea riscului de proiect:
+• Specializare verticală pe componentă — fiecare modul este furnizat și implementat de echipa cu cea mai mare experiență acumulată pe acel domeniu, conform cerinței din cap. 8.2 al Caietului de Sarcini privind certificările acordate de producătorul soluției ofertate (în special pentru Arhitect Sistem și Expert Administrare Baze de Date).
+• Reducerea riscului de integrare prin gruparea componentelor strâns interdependente (Portal Servicii Publice, Chatbot AI și Aplicații mobile cetățeni) la același furnizor, prin module ale aceleiași platforme integrate Enterprise Suite. Această abordare elimină ~30% din riscul tipic de incompatibilitate API între componente eterogene, asigură Single Sign-On nativ între cele 3 canale și sincronizare în timp real a stării utilizatorului.
+• Continuitate operațională pe perioada de garanție — fiecare furnizor asigură suport tehnic L2/L3 pentru produsul propriu pe întreaga perioadă de garanție de 3 ani de la trecerea în producție, conform cap. 7.3 din Caietul de Sarcini, evitând dependența operațională de un singur prestator pentru toate componentele.
+• Responsabilitate clară per livrabil tehnic — fiecare livrabil are un proprietar unic identificat în matricea RACI a proiectului, eliminând ambiguitățile de responsabilitate caracteristice proiectelor cu furnizori suprapuși și facilitând procesul de recepție conform cap. 10.4 al Caietului de Sarcini.
+2.9.3 Mecanismele de coordonare a consorțiului
+Pentru asigurarea unei execuții unitare a celor 9 membri ai consorțiului — în pofida diversității de tehnologii, echipe și locații geografice — <LIDER> aplică următoarele mecanisme de coordonare formală, încadrate în metodologia generală PMI/PMBoK descrisă în secțiunea 2.2 a prezentei propuneri tehnice:
+• Lead Contractor unic — <LIDER> este punctul unic de contact contractual cu ANSVSA, responsabil pentru toate livrabilele consorțiului, garantul respectării termenelor, calității și SLA-urilor, fără posibilitatea ANSVSA de a interacționa direct cu subcontractanții pentru chestiuni contractuale.
+• Steering Committee (frecvență lunară) — format din Project Manager <LIDER>, reprezentantul desemnat al ANSVSA, plus Project Manageri ai furnizorilor cu activitate critică în luna respectivă; validarea milestone-urilor, aprobarea Change Request-urilor cu impact financiar/temporal, escaladări.
+• Technical Committee (frecvență săptămânală) — Arhitect Sistem <LIDER> + arhitecții tehnici ai fiecărui furnizor; sincronizare tehnică, rezolvare blocaje de integrare, validare ADR-uri (Architecture Decision Records), revizuirea contractelor API între componente.
+• Platformă comună de management de proiect — Jira (vizibilitate cross-furnizor pe task-uri, sprint-uri, dependențe), Confluence (documentație partajată, ADR-uri, manuale tehnice, decizii), Microsoft Teams (comunicare zilnică, daily stand-ups), GitLab/Azure DevOps (un singur repository Git pentru toate componentele, cu pipeline CI/CD comun).
+• Standarde tehnice comune impuse pe întreg consorțiul — design system unitar (branding ANSVSA, accesibilitate WCAG 2.1 AA, terminologie consacrată); autentificare unitară obligatorie prin Keycloak Enterprise pentru toate modulele; API design conform OpenAPI 3.0 + standardele de interoperabilitate semantică SEMIC.EU (cf. Ordin MCID 21286/2023); code review obligatoriu între furnizori pentru codul de integrare; testare integrată end-to-end orchestrată de <LIDER>.
+• Acord de consorțiu — semnat de toți cei 9 membri înainte de depunerea ofertei, reglementează responsabilitățile detaliate ale fiecărui membru, mecanismul de plată (prin <LIDER>), asumarea solidară a garanțiilor contractuale și a clauzelor de penalizare, conform art. 53 din Legea 98/2016 privind achizițiile publice.
+2.10 Adaptarea metodologiei la specificul SIDISVA
+SIDISVA este un proiect de complexitate ridicată care presupune dezvoltarea, configurarea și integrarea a 14 componente funcționale interconectate, în 18 luni calendaristice, pentru 46 instituții publice (ANSVSA + 42 DSVSA județene + 3 institute subordonate), circa 185.000 utilizatori unici anuali ai portalului și un buget eligibil de 95.271.200,60 lei. Metodologia generală PMI/PMBoK + BABOK + Agile-Scrum SAFe expusă în secțiunile 2.2 anterioare a fost adaptată concret la următoarele specificități ale contractului, conform cerinței calificativului EXCEPȚIONAL la subfactorul 3.1 din metodologia de evaluare (cap. 13 din Caietul de Sarcini).
+2.10.1 Cele 14 componente SIDISVA — mapare metodă, echipă și furnizor
+Pentru fiecare dintre cele 14 componente funcționale enumerate la cap. 3.4.2 din Caietul de Sarcini, consorțiul a definit explicit furnizorul responsabil, produsul/tehnologia propusă și strategia de implementare (configurare COTS vs. dezvoltare custom vs. mix). Această mapare este sursa adevărului pentru toate planurile operaționale subsidiare (WBS, plan resurse, plan de testare) și se reflectă identic în Anexa F — Matricea de conformitate (1.294 cerințe atomice mapate la responsabil).
+
+[TABLE]
+| Componenta SIDISVA (cap. CdS) | Furnizor | Produs / Tehnologie | Strategia de implementare |
+| 1. LIMS — Laboratory Info Mgmt (3.4.2.1) | <FURNIZOR LIMS> | LIMS COTS + cod sursă | Configurare COTS + dezvoltări specifice ANSVSA (HL7 prin Mirth Connect, integrare echipamente IoT) |
+| 2. DMS — Document Mgmt (3.4.2.2) | <FURNIZOR DMS> | ZIPPER DMS + cod sursă | Configurare nucleu + dezvoltări fluxuri ANSVSA (registre, fluxuri aprobare, integrare pad-uri semnătură olografă) |
+| 3. Mgmt scheme intercomparare (3.4.2.3) | <FURNIZOR DMS> + <FURNIZOR LIMS> | DMS + LIMS configurate | Configurare în DMS și LIMS, fără cod nou — folosit fluxuri standard |
+| 4. GIS (3.4.2.4) | <FURNIZOR GIS> | Soluție GIS dedicată | Configurare + layere ANSVSA + integrare APIA pentru coordonate exploatații |
+| 5. Raportare/BI/Dashboard (3.4.2.5) | <FURNIZOR BI> + <FURNIZOR ETL> | MS Power BI + SSRS + SSAS / MS SSIS | Configurare Data Warehouse + cube-uri SSAS + dashboards Power BI + ETL din >50 surse |
+| 6. Portal Servicii Publice (3.4.2.6) | <FURNIZOR PORTAL> | Enterprise Suite (Portal) | Configurare + dezvoltare 56 servicii electronice + integrare ROeID, eIDAS, ONRC, Ghiseul.ro |
+| 7. BND-SNIIA + mobile vet + mobile fermieri (3.4.2.7) | <LIDER> + <FURNIZOR APP MOBILĂ> | Custom + Enterprise Suite (Mobile) | Dezvoltare full BND-SNIIA + apps native iOS/Android (Swift/SwiftUI + Kotlin/Compose) + offline + AI/ML |
+| 8. Catagrafie/cartografiere unități (3.4.2.8) | <FURNIZOR DMS> + <FURNIZOR GIS> | DMS + GIS | Configurare DMS + layere GIS + import date xls existente |
+| 9. Supraveghere/control/anchete (3.4.2.9) | <FURNIZOR DMS> | ZIPPER DMS + pad semnătură olografă | Configurare DMS + integrare pad-uri USB + dosare unitate partajate |
+| 10. Mgmt instruire personal laboratoare (3.4.2.10) | <FURNIZOR DMS> | ZIPPER DMS configurat | Configurare DMS — calendar, înscrieri, feedback, materiale |
+| 11. App cetățeni — raportare animale sălbatice (3.4.2.11) | <FURNIZOR APP MOBILĂ> | Enterprise Suite (Mobile) | Native iOS + Android + GPS + foto + GIS + ROeID |
+| 12. Autorizare/acreditare/desemnare (3.4.2.12) | <FURNIZOR DMS> + <FURNIZOR PORTAL> | DMS + Portal | Configurare DMS pentru dosare + servicii Portal pentru depunere online + semnătură digitală |
+| 13. Contorizare folosire servicii publice — RCR11 (3.4.2.13) | <FURNIZOR PORTAL> | Enterprise Suite (modul telemetrie) | Configurare modul telemetrie + integrare Data Warehouse + dashboard auditor |
+| 14. Integrări externe (3.4.2.14) | <LIDER> + <FURNIZOR ESB> | Custom + Oracle Service Bus | API-uri pe Oracle Service Bus + mock-up-uri pentru sisteme guvernamentale neimplementate (PNI, PJN, PCUe) |
+[/TABLE]
+
+Observație: componentele 3 (scheme intercomparare), 8 (catagrafie), 10 (instruire lab), 12 (autorizare/acreditare) sunt explicit prevăzute în Caietul de Sarcini să fie implementate folosind soluția DMS — adică prin configurare, nu dezvoltare. Acest fapt reduce semnificativ efortul de dezvoltare net și riscul tehnic asociat și permite concentrarea resurselor pe componentele inovatoare (BND-SNIIA cu AI/ML, app mobilă, integrări guvernamentale).
+2.10.2 Stack-ul tehnologic concret propus
+Pentru a elimina orice ambiguitate privind soluția tehnică ofertată — element esențial pentru calificativul EXCEPȚIONAL la subfactorul 3.1 — tabelul de mai jos prezintă produsele și tehnologiile propuse pe fiecare nivel arhitectural. Toate cantitățile și sizing-urile respectă cerințele exacte din cap. 3.4.3.2 + 3.4.3.4 al Caietului de Sarcini. Toate produsele COTS sunt licențiate BYOL (Bring Your Own License) prin Microsoft Azure în Cloud Guvernamental, conform cap. 3.4.3.1.
+
+[TABLE]
+| Strat arhitectural | Componentă | Produs / Tehnologie | Sizing |
+| A. Infrastructură | OS server Linux | Red Hat Enterprise Linux 9 / Oracle Linux 9 | 20-30 VM |
+| A. Infrastructură | OS server Windows | Windows Server 2022 Datacenter | Min. 4 + 6-10 VM (inclusiv 4 honeypot) |
+| A. Infrastructură | Web server | NGINX Plus | 2 noduri × 16 cores, cluster activ-activ |
+| A. Infrastructură | App server | Microsoft IIS | 2 noduri × 16 cores |
+| A. Infrastructură | SGBD principal | Microsoft SQL Server Enterprise (TDE, cache fusion) | 2 noduri × 8 cores |
+| A. Infrastructură | SGBD NoSQL | Elasticsearch (cluster 3 noduri) | Log-uri, retenție conform NIS2 |
+| A. Infrastructură | ETL | Microsoft SSIS | 16 cores |
+| A. Infrastructură | BI | Microsoft Power BI + SSRS + SSAS | 50 utilizatori |
+| A. Infrastructură | IAM | Keycloak Enterprise | 150 utilizatori interni + 185.000 portal |
+| A. Infrastructură | GIS | Soluție GIS dedicată — <FURNIZOR GIS> | 1 server + 50 editori |
+| A. Infrastructură | ESB | Oracle Service Bus | Cluster activ-pasiv, 16 cores/nod |
+| B. Software aplicativ | DMS | ZIPPER DMS | Utilizatori nelimitați + cod sursă |
+| B. Software aplicativ | Portal | Enterprise Suite (modul Portal) | Nelimitat + perpetuu |
+| B. Software aplicativ | Chatbot AI / NLP RO | Enterprise Suite (modul Chatbot) | 1 instanță |
+| B. Software aplicativ | App mobilă | Enterprise Suite (modul Mobile) | iOS + Android + PWA, dev accounts Apple 99$/an + Google free |
+| B. Software aplicativ | LIMS | <FURNIZOR LIMS> COTS | Utilizatori nelimitați + cod sursă + 3 ani L2/L3 |
+| B. Software aplicativ | Integrare HL7 | Mirth Connect (NextGen) | 1 instanță |
+| C. Securitate | WAF | F5 / Imperva / FortiWeb | 2 buc (OWASP Top 10) |
+| C. Securitate | Honeypot | FortiDeceptor | 1 + 4 instanțe Win × 4 vCPU |
+| C. Securitate | NMS / NAC | Cisco DNA / ClearPass | Min. 600 dispozitive |
+| C. Securitate | SIEM | Splunk Enterprise Security / IBM QRadar | 1 cluster (IOC 3 ani) |
+| C. Securitate | Email Security | Cisco IronPort | 2 buc (filtrare + sandbox) |
+| C. Securitate | NGFW centru | FortiGate / Palo Alto | 2 buc, redundant, 10 VDOM |
+| C. Securitate | NGFW locații | FortiGate 100F | 90 buc (45 locații × 2) |
+| C. Securitate | Antivirus EDR | CrowdStrike / SentinelOne | 436 + 50 endpoints |
+| D. Productivity | MS Office laptopuri | Microsoft Office Home & Business 2024 OEM | 100 buc |
+| D. Productivity | MS Office complete teren | Microsoft Office Home & Business 2024 OEM | 336 buc (8 × 42 DSVSA) |
+[/TABLE]
+
+Conformitate cu Legea 354/2022 privind protecția sistemelor informatice ale autorităților publice (în contextul invaziei declanșate de Federația Rusă împotriva Ucrainei): stack-ul propus include exclusiv producători din state cu jurisdicții compatibile (SUA, UE, Israel, Țările de Jos) — nicio componentă din state cu restricții impuse de L 354/2022. Antivirus-ul EDR (CrowdStrike / SentinelOne) respectă această cerință fundamentală, iar acest fapt va fi documentat explicit în Propunerea Tehnică, secțiunea 10 — Securitate informatică.
+2.10.3 Drumul critic al proiectului și planul de paralelizare
+Pe baza jaloanelor obligatorii din cap. 6 + 7.3 ale Caietului de Sarcini (Analiză — luna 6, Proiectare — luna 7, Livrare HW/SW + PIP — luna 12, Dezvoltare/configurare/integrare — luna 15, Migrare — luna 16, Implementare — luna 17, Testare + Instruire + Go-live — luna 18, fără a depăși 21.05.2027), drumul critic identificat pentru SIDISVA este următorul:
+
+[TABLE]
+| Lună | Activitate critică | Livrabile principale | Dependențe |
+| L1-L6 | Analiză sistem (toate cele 14 componente) | Document de Analiză aprobat (per componentă), specificații funcționale, modele BPMN/UML | Acces ANSVSA + utilizatori cheie pentru workshop-uri (cf. ipoteză c) |
+| L6-L7 | Proiectare sistem | Document de Proiectare aprobat, modele de date logice + fizice, arhitectură de detaliu, ADR-uri | Validare ANSVSA (max 10 zile) |
+| L4-L12 | Livrare/instalare/configurare HW + SW + PIP | Medii Dev/Test/Stage/Prod configurate în Cloud Guvernamental, monitoring activ | Activare cont Cloud Guvernamental Azure RO; aprovizionare HW endpoints |
+| L7-L15 | Dezvoltare/configurare/integrare (drumul critic principal) | Cod sursă livrat (DMS configurat, LIMS configurat, BND-SNIIA dezvoltat, Portal/Chatbot/Mobile dezvoltate, GIS configurat, BI configurat, integrări API live) | Drum critic real: BND-SNIIA + Integrări guvernamentale (vezi mai jos) |
+| L15-L16 | Migrare date | Date migrate din vechiul SNIIA, LIMS, registre xls, BND existent — validare calitate prin AI/ML | Disponibilitatea exporturilor de la sistemele actuale |
+| L16-L17 | Implementare (rollout pe medii) | Toate componentele instalate și configurate în mediul de producție Cloud Guvernamental | Migrare validată |
+| L17-L18 | Testare integrată + UAT | Rapoarte testare (funcțional, integrare, performanță, securitate Pen-Test, DR), UAT acceptat | PIP HW completă, dev finalizat |
+| L18 | Instruire utilizatori + Go-live | 144 utilizatori + 3 administratori instruiți; sistem live cu suport on-call | UAT semnat fără obiecții |
+[/TABLE]
+
+Componentele de pe drumul critic — și deci cu prioritate maximă în alocarea resurselor consorțiului — sunt:
+• BND-SNIIA (cap. 3.4.2.7) — cea mai complexă componentă, integrează 6+ surse de date (SNIIA actual, APIA, ANARZ, Colegiul Medicilor Veterinari, exploatații, evenimente animale); 2 aplicații mobile native (medici vet + fermieri) cu lucru offline; algoritmi ML/AI obligatorii pentru calitate date + fraud detection (cf. cerinței explicite din cap. 3.4.2.7); aproximativ 400.000 fermieri + 2.600 medici vet concesionari beneficiari.
+• Integrările cu sisteme guvernamentale (cap. 3.4.2.14) — PSCID-ROeID, Nodul eIDAS, Platforma Națională de Interoperabilitate (PNI), PCUe/PDURo, Platforma de Jurnalizare și Notificare (PJN), ONRC, APIA, ANCPI, ANARZ, Colegiul Medicilor Veterinari, SNIIA, Ghiseul.ro. Unele dintre acestea sunt în curs de implementare la nivel guvernamental — strategia de mitigare prin mock-up este detaliată în secțiunea 2.13.3.
+• LIMS + migrarea datelor din sistemele de laborator actuale — implică integrare cu echipamente IoT, conformitate SR EN ISO/CEI 17043 (RENAR), suport HL7 prin Mirth Connect și un volum foarte mare (280.000 cereri analize/an, 33.000 utilizatori unici).
+Plan de paralelizare pentru încadrarea în 18 luni, în pofida volumului mare de dezvoltare aferent celor 14 componente:
+• Analiza (L1-L6) este structurată pe 9 sub-echipe paralele, fiecare furnizor responsabil pentru analiza propriei componente, sincronizate săptămânal de Analyst Business <LIDER> în Technical Committee.
+• <FURNIZOR ESB> începe configurarea Oracle Service Bus din luna 4 (în paralel cu analiza), pentru ca până în luna 8 backbone-ul de integrare să fie disponibil și celelalte componente să poată dezvolta direct pe API-uri publicate.
+• Echipele DMS, Portal, Chatbot, GIS, BI rulează dezvoltare paralelă cu BND-SNIIA, sincronizate la milestone-uri majore (M6 = analiză finalizată, M12 = HW+PIP gata, M15 = dezvoltare finalizată).
+• Aplicația mobilă (3 platforme: iOS nativ, Android nativ, PWA) — dezvoltare paralelă cu echipa Portal, începută în luna 4, conform planului de efort estimat la 830 om-zile (692 dezvoltare + 138 contingency 20%) — vezi planul de implementare detaliat din secțiunea 3 a propunerii tehnice.
+• Securitatea cibernetică (WAF, SIEM, NGFW, EDR, NAC, Honeypot, Email Security) — configurare începută din luna 8 (după ce mediile țintă sunt disponibile), cu validare în testarea Pen-Test din luna 18.
+Riscul cel mai mare al drumului critic — disponibilitatea sistemelor guvernamentale țintă (PNI, eIDAS extins, PJN) la momentul integrării — este atenuat prin clauza explicită din cap. 3.4.2.14 al Caietului de Sarcini: dacă sistemele guvernamentale țintă nu sunt finalizate până la finalul perioadei de implementare, integrarea se realizează cu mock-up-uri OpenAPI și apoi cu sistemele reale în perioada de garanție, fără cost suplimentar pentru ANSVSA. Această clauză transformă riscul tehnologic extern într-un risc gestionabil contractual.
+2.10.4 Acceptarea ipotezelor din cap. 4.1 al Caietului de Sarcini
+<LIDER> și ceilalți membri ai consorțiului acceptă integral cele 4 ipoteze enunțate de Autoritatea Contractantă în cap. 4.1 al Caietului de Sarcini, cu următoarele precizări operaționale și măsuri de adaptare:
+
+[TABLE]
+| Ipoteză (cap. 4.1 CdS) | Poziția consorțiului | Măsuri operaționale |
+| a) Conținutul serviciilor descris în Caietul de Sarcini reflectă forma și detaliile cunoscute Achizitorului la data realizării. Specificațiile de integrare cu sisteme terțe se referă la forma actuală a acestor sisteme. | ACCEPTATĂ | Mecanism formal de Change Request pentru orice modificare a sistemelor țintă identificată în faza de analiză; ADR-uri actualizate la fiecare modificare API a sistemelor partenere; anti-corruption layer pe Oracle Service Bus pentru izolarea SIDISVA de modificările sistemelor externe. |
+| b) Nu se prevăd schimbări ale cadrului instituțional și legal care să afecteze major implementarea. | ACCEPTATĂ | Monitorizare continuă a actelor normative cu impact (NIS2 / OUG 155/2024, L 242/2022 PNI, L 354/2022, GDPR); raportare lunară către ANSVSA în Steering Committee a oricărei modificări legislative cu potențial impact; propunere CR pentru adaptare. |
+| c) Toate informațiile relevante și disponibile la Achizitor vor fi puse la dispoziția Prestatorului într-un timp rezonabil. | ACCEPTATĂ cu propunere de SLA reciproc | Consorțiul propune ca în acordul de lucru să fie definit un SLA reciproc pentru livrarea informațiilor de către ANSVSA: maxim 5 zile lucrătoare pentru cereri standard, 10 zile lucrătoare pentru cereri complexe; orice depășire = trigger pentru extensie de termen, fără penalizare consorțiu. |
+| d) Prestatorul va semna acord de confidențialitate și de garantare GDPR la semnarea Contractului. | ACCEPTATĂ integral | Consorțiul deține deja proceduri interne de confidențialitate și prelucrare date conforme ISO/IEC 27001:2022 și ISO/IEC 27701:2019 (PIMS); DPO desemnat pre-contractual; acordul de confidențialitate va fi semnat de toți cei 9 membri ai consorțiului, cu răspundere solidară. |
+[/TABLE]
+
+2.11 Registrul de riscuri al proiectului SIDISVA
+In completarea procedurii generale de management al riscurilor prezentata in sectiunea 2.3, consortiul a intocmit registrul de riscuri specific proiectului SIDISVA. Registrul include integral cele 7 riscuri minime identificate de Autoritatea Contractanta in cap. 4.2 al Caietului de Sarcini, plus 6 riscuri suplimentare identificate de consortiu pe baza experientei proprii in implementari similare (sisteme guvernamentale cu integrari multiple). Fiecare risc are atribuit: probabilitate (scala 1-5), impact (scala 1-5), scor (P x I), strategia de tratare (evitare / mitigare / transfer / acceptare), planul de mitigare, planul de contingenta si proprietarul (Risk Owner).
+Registrul de riscuri este un document viu, actualizat lunar de Project Manager <LIDER> si raportat in fiecare Steering Committee. Reevaluarea probabilitatilor si impactelor se face la fiecare milestone major al proiectului (M6 - analiza finalizata, M12 - HW instalat, M15 - dezvoltare finalizata, M18 - Go-live).
+2.11.1 Riscurile obligatorii din cap. 4.2 al Caietului de Sarcini
+
+[TABLE]
+| # | Risc | P x I | Strategie | Plan de mitigare | Owner |
+| R1 | Lipsa unei comunicari eficiente intre echipa beneficiarului si consortiu | 3x4=12 | Mitigare | Plan formal de comunicare; Steering Committee lunar + Technical Committee saptamanal; platforma Jira+Confluence cu vizibilitate cross-furnizor; SLA reciproc pentru livrarea informatiilor. | PM <LIDER> + reprezentant ANSVSA |
+| R2 | Extinderea perioadei de achizitie din intarzieri/blocaje administrative | 2x3=6 | Acceptare + buffer | Buffer de 1 luna prevazut in plan; suplimentare efort prin alocare resurse de rezerva in lunile critice; flexibilitate prin paralelizarea activitatilor ne-blocante. | PM <LIDER> |
+| R3 | Schimbarea factorilor de decizie din ANSVSA pe parcursul implementarii | 3x3=9 | Mitigare | Prezentarea proiectului tuturor decidentilor cheie din luna 1; documentatie de proiect actualizata permanent pentru onboarding rapid al unor noi decidenti; arhiva deciziilor in Confluence. | <LIDER> + ANSVSA |
+| R4 | Intarzieri in luarea deciziilor (validare livrabile, aprobare CR-uri) | 4x3=12 | Mitigare | SLA reciproc: 10 zile lucratoare validare rapoarte trimestriale, 5 zile pentru observatii la livrabile, 3 zile pentru aprobari CR mici (cap. 10.3 CdS); proceduri CCB formale; escalare catre Steering Committee. | ANSVSA + PM <LIDER> |
+| R5 | Fluctuatii la nivelul echipelor de proiect (plecari experti cheie) | 3x4=12 | Mitigare + transfer | Inlocuire experti cu CV similar conform art. 162 HG 395/2016 (cap. 8.1 CdS); retention bonus pentru echipa cheie; cross-training intre furnizori pentru roluri critice; arhitect <LIDER> face mentoring tehnic. | <LIDER> + furnizori |
+| R6 | Date/informatii insuficiente de la Autoritatea Contractanta | 3x4=12 | Mitigare | SLA livrare informatii (cf. ipoteza c, sec. 2.10.4); escalare formala pentru intarzieri; plan B prin modelare ipotetica validata ulterior cu ANSVSA; documentarea ipotezelor in Document de Analiza. | ANSVSA + Analist Business <LIDER> |
+| R7 | Adaugare cerinte/activitati noi din modificari legislative (NIS2, L 242/2022, L 354/2022) | 3x3=9 | Mitigare prin Change Request | Procedura formala CR cu CCB; buffer de 5% timp/buget contingency; monitorizare permanenta a actelor normative cu impact (DPO + Expert Securitate <LIDER>); arhitectura flexibila pentru ajustari legislative. | PM <LIDER> |
+[/TABLE]
+
+2.11.2 Riscuri suplimentare identificate de consortiu
+
+[TABLE]
+| # | Risc | P x I | Strategie | Plan de mitigare | Owner |
+| R8 | Indisponibilitate sisteme guvernamentale tinta (PNI, ROeID extins, eIDAS, PJN, PCUe) la momentul integrarii | 4x5=20 | Mitigare arhitecturala | Strategia mock-up + comutare (vezi sec. 2.13.3): Anti-Corruption Layer pe Oracle Service Bus; mock-uri OpenAPI complete; feature flags pentru comutare automata mock-real; clauza cap. 3.4.2.14 CdS - integrare ulterioara in garantie fara cost suplimentar. | <FURNIZOR ESB> + Arhitect Sistem <LIDER> |
+| R9 | Modificari API la sisteme partenere (APIA, ONRC, ANARZ, Colegiul Medicilor Veterinari) | 3x3=9 | Mitigare arhitecturala | Anti-Corruption Layer pe Oracle Service Bus pentru izolarea SIDISVA; versionare API conforma SEMIC.EU; monitor proactiv pentru schimbari (subscribe la canalele oficiale); contracte API formale cu fiecare partener. | <FURNIZOR ESB> |
+| R10 | Incidente de securitate cibernetica pe perioada implementarii (atacuri, ransomware, exfiltrare date) | 2x5=10 | Mitigare + transfer | Defense-in-depth pe 7 straturi (sec. 2.12.1); DevSecOps cu SAST/DAST in CI/CD; SIEM Splunk/QRadar cu SOC 24x7; Honeypot FortiDeceptor pentru early warning; asigurare cyber-risk; plan continuitate operationala (BCP). | <LIDER> Security + Expert Securitate |
+| R11 | Migrare incompleta date din vechiul SNIIA, LIMS, registre xls | 3x4=12 | Mitigare iterativa | Migrare iterativa pe loturi; perioada paralel run de min. 30 zile; plan de rollback documentat; validare calitate date prin algoritmi AI/ML de detectie anomalii (sec. 2.13.2); audit migrare semnat de ANSVSA. | <FURNIZOR LIMS> + <LIDER> |
+| R12 | Performanta sub asteptari la incarcare cu 185.000 utilizatori unici/an portal | 2x4=8 | Mitigare arhitecturala | Arhitectura Cloud-Native cu auto-scaling Kubernetes; testare load + stress (sec. 2.5 - Testare); CDN pentru asset-uri statice; cache Redis pentru date frecvent accesate; SLO definit (p95 sub 2s). | Arhitect Sistem <LIDER> |
+| R13 | Adoptie slaba utilizatori (5.300 angajati ANSVSA + 2.600 medici vet concesionari + 4.800 utilizatori acreditati) | 3x3=9 | Mitigare prin change management | Plan instruire stratificat (Train-the-Trainer + sesiuni grupuri mici + e-learning); 144 utilizatori cheie + 3 administratori instruiti formal (cf. cap. 3.5 CdS); suport on-call in primele 3 luni post Go-live; chatbot AI pentru auto-asistenta; manuale video. | <LIDER> + Expert Instruire |
+[/TABLE]
+
+2.12 Asigurarea securitatii informatice si informationale
+Securitatea cibernetica si protectia informatiilor sunt integrate by design pe intreaga arhitectura SIDISVA si pe intregul ciclu de viata al proiectului. Aceasta sectiune demonstreaza concret modul in care consortiul va indeplini cele 6 principii de securitate cibernetica enumerate la cap. 3.4.1.2 al Caietului de Sarcini (Conformitate, Optimizare costuri, Responsabilitati partajate, Protectia informatiilor, Securitate pe intreg ciclul de viata, Securizarea operatiunilor) si cum se conformeaza cu urmatoarele cadre normative obligatorii:
+• Regulamentul (UE) 2016/679 GDPR + Legea 190/2018 + Legea 363/2018 (protectia datelor personale)
+• Directiva (UE) 2022/2555 NIS2, transpusa in Romania prin OUG 155/2024 (securitate cibernetica pentru entitati esentiale si importante)
+• Legea 354/2022 privind protectia sistemelor informatice ale autoritatilor publice in contextul invaziei declansate de Federatia Rusa impotriva Ucrainei
+• Legea 362/2018 + OUG 119/2020 (nivel comun ridicat de securitate a retelelor si sistemelor informatice)
+• ISO/IEC 27001:2022 (Sistem de Management al Securitatii Informatiei - SMSI), ISO/IEC 27701:2019 (Privacy Information Management - PIMS), ISO/IEC 27017 (cloud security), ISO/IEC 27018 (PII in cloud)
+• NIST Cybersecurity Framework v2.0 (Identify / Protect / Detect / Respond / Recover / Govern)
+• OWASP Top 10 + OWASP ASVS Level 3 (aplicatii web), OWASP MASVS Level 1 (aplicatii mobile)
+2.12.1 Arhitectura de securitate defense-in-depth pe 7 straturi
+Modelul defense-in-depth aplicat la SIDISVA distribuie mecanismele de protectie pe 7 straturi independente, fiecare cu produsele si parametrii sai specifici (toate cantitatile conform cap. 3.4.3.4 al Caietului de Sarcini):
+
+[TABLE]
+| Strat | Mecanisme implementate | Produse / Tehnologii |
+| 1. Fizic | Gazduire in Cloud Guvernamental (Azure RO) cu certificare ISO 27001 + ISAE 3402; control acces fizic conform politicilor Cloud Guvernamental; protectie environmental | Cloud Guvernamental (Azure Stack RO) |
+| 2. Retea perimetru | Firewall redundant centru (2 instante, min. 10 VDOM); firewall in 45 locatii DSVSA (90 instante); micro-segmentare; VPN IPSec; protectie DDoS | FortiGate / Palo Alto (centru), FortiGate 100F (locatii) |
+| 3. Retea interna | Segmentare VLAN per zona (DMZ, business, management, backup); NAC 802.1X pentru min. 600 dispozitive; NMS pentru detectie anomalii trafic | Cisco DNA / ClearPass |
+| 4. Aplicatie | WAF cu protectie OWASP Top 10 (2 instante, NU per useri cf. cap. 3.4.3.4.1.1 CdS); Email Security cu filtrare + sandbox (2 instante); SAST + DAST automate in CI/CD | F5 / Imperva / FortiWeb (WAF); Cisco IronPort (email) |
+| 5. Identitate | IAM Keycloak Enterprise (150 interni + 185.000 portal); federatie ROeID (cetateni RO) + eIDAS (UE); MFA obligatoriu pentru utilizatori interni; RBAC granular; audit logging end-to-end | Keycloak Enterprise + ROeID + eIDAS |
+| 6. Date | Encryption at rest (TDE Microsoft SQL Server Enterprise, BitLocker, Azure Disk Encryption); encryption in transit (TLS 1.3 obligatoriu); Azure Key Vault HSM-backed pentru chei; data masking pentru medii test/dev | MS SQL TDE, Azure Disk Encryption, Azure Key Vault HSM |
+| 7. Endpoint | EDR pentru 486 endpoints (436 + 50); MS Defender for Cloud; control USB; politici Group Policy; patch management automat | CrowdStrike / SentinelOne EDR + MS Defender |
+[/TABLE]
+
+2.12.2 Detectare si raspuns la incidente (Detect & Respond)
+• SIEM (Splunk Enterprise Security sau IBM QRadar) - colectare centralizata log-uri din toate componentele, normalizate Common Information Model; retentie Indicators of Compromise (IOC) pe 3 ani conform cap. 3.4.3.4.1.4 CdS; corelatie evenimente pe regulile MITRE ATT&CK.
+• Security Operations Center (SOC) 24x7 - fie intern <LIDER> (echipa dedicata ISO 27001 certificata), fie externalizat la un furnizor MSSP autorizat DNSC; tier 1 + tier 2 + tier 3 analisti; on-call rotation.
+• Honeypot FortiDeceptor - 4 instante Windows x 4 vCPU (cf. cap. 3.4.3.4.1.2 CdS); decoys cu credentiale fake pentru detectarea lateral movement si a atacatorilor cu acces initial.
+• Threat Intelligence - feed-uri MISP (Malware Information Sharing Platform), feed-uri ENISA, feed-uri DNSC (autoritatea nationala), feed-uri commerciale (Recorded Future / Mandiant); integrare cu SIEM pentru corelatie automata.
+• SOAR (Security Orchestration, Automation and Response) - playbook-uri automate pentru incidente comune (brute force, malware detected, phishing, ransomware indicators); izolare automata endpoints compromise; notificari catre SOC.
+• Notificare obligatorie incidente - conform Art. 23 NIS2 + OUG 155/2024: notificare early warning DNSC in 24h, notificare incident in 72h, raport final in 1 luna; proceduri pregatite si testate pre Go-live.
+2.12.3 Securitatea proceselor de dezvoltare (DevSecOps shift-left)
+• SAST (Static Application Security Testing) - analiza cod sursa in fiecare commit Git, gate-uri in pipeline CI/CD pentru blocarea CVE high/critical; instrumente: SonarQube, Semgrep, Checkmarx (pentru cod propriu) + scan-uri specifice limbajelor (ESLint security, Bandit pentru Python, gosec pentru Go etc.).
+• DAST (Dynamic Application Security Testing) - testare saptamanala pe medii staging; instrumente: OWASP ZAP, Burp Suite Pro, Acunetix; scan-uri full OWASP Top 10.
+• Dependency Scanning (SCA - Software Composition Analysis) - Snyk + Trivy + OWASP Dependency-Check pe fiecare build; alert daca apare CVE high/critical intr-o dependenta; politici de actualizare cu maxim 30 zile.
+• Secret Scanning - gitleaks + TruffleHog ruleaza la fiecare commit pentru a preveni leak-uri de credentiale (chei API, parole, token-uri JWT) in repository.
+• Container Security - image scanning cu Trivy pentru toate imaginile Docker; runtime protection cu Falco pentru detectie comportament anomal in pod-uri; policy-as-code cu Open Policy Agent (OPA) Gatekeeper pe Kubernetes.
+• Penetration Testing - intern trimestrial (echipa <LIDER> Security cu certificari OSCP/CEH) + audit extern anual de catre o terta parte independenta certificata ANSCC; rezultate raportate catre Steering Committee + remediere obligatorie pre-acceptanta.
+• Bug Bounty intern pentru perioada UAT - utilizatori cheie ANSVSA invitati sa raporteze probleme de securitate identificate, cu recompense simbolice; canal dedicat in Jira Service Management.
+2.12.4 Protectia datelor personale (Privacy & GDPR)
+SIDISVA prelucreaza date personale ale cetatenilor romani (date de identificare via ROeID, date contact, exploatatii animale), date privind sanatatea publica (cu impact indirect - sanitar-veterinar), date ale profesionistilor (medici veterinari concesionari, angajati ANSVSA). Consortiul aplica urmatoarele masuri specifice:
+• DPIA (Data Protection Impact Assessment) - elaborat inainte de Go-live conform Art. 35 GDPR; revizuit la fiecare modificare semnificativa a prelucrarii; coordonare cu DPO ANSVSA + DPO <LIDER>.
+• Privacy by Design + Privacy by Default - minimizare date colectate (doar ce e strict necesar serviciului); pseudo-anonimizare unde e tehnic posibil; retention policies automatizate cu stergere/anonimizare la expirare; consimtamant explicit pentru prelucrari secundare.
+• Exercitarea drepturilor persoanelor vizate (Art. 15-22 GDPR) - interfata self-service in Portal pentru: dreptul de acces (export date proprii), rectificare, stergere (drept de a fi uitat), portabilitate (export in format machine-readable), restrictionare, opozitie; ticket automat catre DPO pentru cereri complexe.
+• Registrul activitatilor de prelucrare (Art. 30 GDPR) - mentinut electronic in DMS (ZIPPER DMS), actualizat la fiecare modificare; export disponibil pentru ANSPDCP (Autoritatea Nationala de Supraveghere a Prelucrarii Datelor cu Caracter Personal) la cerere.
+• Notificare breach (Art. 33-34 GDPR) - procedura pregatita pentru notificare ANSPDCP in 72h si informare persoane vizate cand e cazul; testata in exercitii simulate.
+• Pregatit pentru Platforma de Jurnalizare-Notificare (PJN) - cand va fi disponibila la nivel guvernamental (cf. cap. 3.4.2.14 CdS), fiecare cetatean va putea fi notificat automat cand datele sale sunt accesate de un operator ANSVSA.
+2.12.5 Continuitate operationala si recuperare in caz de dezastru
+• Strategy backup 3-2-1 - 3 copii ale datelor (1 productie + 2 backup-uri), 2 medii diferite (online + offline), 1 copie off-site (regiune diferita Cloud Guvernamental); backup automat zilnic + transactional log la 15 minute.
+• RPO (Recovery Point Objective) tinta: 1 ora - pierdere maxima admisibila de date in caz de incident.
+• RTO (Recovery Time Objective) tinta: 4 ore - timp maxim admisibil pentru restaurarea serviciului in caz de dezastru.
+• DR Site secundar - in Cloud Guvernamental, regiune geografica diferita; replicare asincrona continua pentru date critice; comutare automata DNS in caz de failure centru primar.
+• Teste DR - semestrial pe perioada implementarii contractului, lunar pe perioada garantiei; documentate prin rapoarte de exercitiu cu lessons learned.
+• Business Continuity Plan (BCP) - document standalone elaborat in luna 8, actualizat anual; include scenarii: ransomware, pierdere DC primar, indisponibilitate Cloud Guvernamental, atac DDoS prelungit; proceduri runbook pentru fiecare scenariu.
+2.13 Abordare inovatoare si diferentiatori competitivi
+Pentru a livra valoare adaugata semnificativa peste cerintele minime ale Caietului de Sarcini - element esential pentru obtinerea calificativului EXCEPTIONAL la subfactorul 3.1 (criteriul abordare inovatoare si eficienta) - consortiul propune 5 elemente concrete de inovatie si diferentiere. Fiecare element are impact direct verificabil asupra eficientei, calitatii sau riscului proiectului.
+2.13.1 Suite integrata Portal + Chatbot + App mobila (reducere risc integrare ~30%)
+Spre deosebire de abordarile tipice multi-furnizor pe componente conexe, in cadrul consortiului trei componente strans interdependente - Portal Servicii Publice, Chatbot AI conversational si Aplicatii mobile native pentru cetateni - sunt furnizate de acelasi membru (<FURNIZOR PORTAL> / <FURNIZOR CHATBOT> / <FURNIZOR APP MOBILA>), prin module ale aceleiasi platforme integrate Enterprise Suite. Avantajele concrete, masurabile:
+• Single Sign-On nativ intre cele 3 canale - un singur cont cetatean folosit identic in Portal web, Chatbot si App mobila, fara re-autentificare la trecerea intre canale.
+• UX consistent garantat - acelasi design system, aceleasi terminologii, acelasi flow conversational; reduce timpul de instruire cetateni si rata de abandon.
+• Sincronizare in timp real a starii utilizatorului - o cerere depusa in Portal e vizibila imediat in App mobila; notificarea push la decizia ANSVSA ajunge prin canalul preferat al cetateanului.
+• Mentenanta unica - un singur producator pentru cele 3 module, un singur ciclu de release (eliminand decalajul de versiune intre componente), un singur SLA, un singur punct de escaladare in garantie.
+• Reducerea cu ~30% a riscului de incompatibilitate API - estimat pe baza experientei consortiului din implementari similare unde componentele eterogene au generat incidente de integrare pe perioada UAT.
+2.13.2 AI/ML pentru calitatea datelor BND-SNIIA si fraud detection
+Caietul de Sarcini solicita explicit, la cap. 3.4.2.7, implementarea de algoritmi ML/AI pentru monitorizarea calitatii datelor, alerte pentru fraude si alte anomalii, predictii legate de volumul de actiuni sanitar-veterinare. Consortiul propune implementarea concreta a 4 modele dedicate, antrenate pe datele istorice ANSVSA + SNIIA:
+• Anomaly Detection - Isolation Forest + LSTM Autoencoders pentru depistarea automata a anomaliilor in declararile de evenimente BND-SNIIA: inregistrari de nastere imposibile temporal (ex: 2 fatari consecutive in 30 zile pentru aceeasi femela bovina), miscari de animale incompatibile geografic (transport peste 1000 km in 6 ore), schimbari de proprietar suspecte.
+• Prediction Volumes - XGBoost si Prophet pentru estimarea volumului de actiuni sanitar-veterinare asteptate per DSVSA judeteana / per luna, permitand alocarea anticipata a resurselor inspectie si a stocurilor de crotalii / vaccinuri / reagenti laborator.
+• Fraud Detection - Graph Neural Networks (GNN) pentru detectarea pattern-urilor de frauda: aceleasi animale crotaliate de mai multe ori (re-utilizare ilegala crotalii pierdute), transferuri ciclice intre exploatatii conectate (laundering provenienta), scheme de frauda subventii APIA.
+• Data Quality Scoring - sistem de scoring per inregistrare BND (0-100) bazat pe consistenta temporala, geografica, biologica; evidentiere automata pe harta GIS a zonelor cu calitate slaba a datelor (potential pentru control fizic / re-verificare); dashboard de calitate vizibil utilizatorilor ANSVSA.
+Toate modelele AI/ML vor fi explicabile (XAI - Explainable AI, prin tehnici SHAP/LIME), respectand principiul transparentei algoritmice obligatoriu pentru sistemele guvernamentale (Regulamentul UE AI Act). Re-training-ul modelelor este programat trimestrial pe perioada garantiei.
+2.13.3 Strategia de rezilienta a integrarilor - mock-up + comutare
+Pentru integrarile cu sisteme guvernamentale in curs de implementare la nivel national (Platforma Nationala de Interoperabilitate - PNI, Platforma de Jurnalizare-Notificare - PJN, Punctul de Contact Unic electronic - PCUe / Portalul Digital Unic - PDURo), unde Caietul de Sarcini (cap. 3.4.2.14) permite explicit implementarea cu mock-up si finalizarea integrarii in perioada de garantie, consortiul aplica o strategie sofisticata in 4 pasi:
+• Anti-Corruption Layer pe Oracle Service Bus - pentru fiecare sistem tert, un strat de adaptare izoleaza SIDISVA de modelele de date si API-urile specifice; modificarile viitoare ale sistemelor partenere afecteaza doar layer-ul, nu componentele SIDISVA.
+• Mock-uri OpenAPI complete - pentru fiecare sistem tinta, mock-uri implementate generate din specificatiile publicate sau previzionate; mock-urile raspund cu date realiste pentru testare si UAT; documentatie Swagger completa pentru fiecare API.
+• Switch automatic prin feature flags - comutare instantanee mock-real pentru fiecare integrare, fara modificare cod si fara downtime; configurabil per mediu (dev/test/prod); rollback rapid in caz de probleme.
+• Conformitate cu Ordinul MCID 21286/26.10.2023 (standarde interoperabilitate) - toate API-urile expuse de SIDISVA respecta cadrul SEMIC.EU + EIF (European Interoperability Framework); catalog API publicat in RNR (Registrul National al Registrelor) cand acesta va fi disponibil.
+2.13.4 Chatbot AI conversational in limba romana - NLP nativ
+Componenta Chatbot din Enterprise Suite implementeaza procesare a limbajului natural (NLP) nativ in limba romana, fine-tunata pe corpus-ul public ANSVSA (legislatie, ghiduri, FAQ-uri, comunicate). Capabilitati concrete:
+• Intent Classification cu peste 90% acuratete pe cazurile uzuale - depunere cerere (analiza, autorizare, raportare animale salbatice), verificare status cerere anterior depusa, intrebari frecvente (durate procesare, costuri, documente necesare), ghidare procedurala pas-cu-pas.
+• Fallback warm transfer la operator uman - cand acuratetea modelului scade sub un prag configurabil (default 60%), conversatia e transferata automat unui operator ANSVSA cu istoric conversatie + context cetatean preincarcat (Salesforce Service Cloud / similar).
+• Retrieval-Augmented Generation (RAG) - cunostintele ANSVSA (legislatie, ghiduri interne) sunt indexate vectorial in Elasticsearch + retrieved la fiecare interogare; elimina riscul de halucinatie caracteristic LLM-urilor pure.
+• Conformitate DEMO #7 + #6 - Chatbot-ul asista utilizatorul la configurarea formularelor drag-and-drop prin sugestii contextuale (DEMO #7); si permite modificarea diagramelor BPMN/UML prin comenzi conversationale (parte din DEMO #6).
+• Multi-canal - acelasi chatbot expus pe Portal web (widget), pe App mobila (integrare nativa), pe WhatsApp Business (canal optional) si pe e-mail (raspunsuri automate pentru intrebari simple).
+2.13.5 Telemetrie automata pentru indicator RCR11 - automatizare audit POCIDIF
+Indicatorul de rezultat obligatoriu POCIDIF RCR11 - Utilizatori de servicii, produse si procese digitale publice noi si optimizate, numar utilizatori anual - necesita, conform cap. 3.4.2.13 CdS, crearea unei modalitati facile de probare si contorizare a utilizatorilor. Consortiul propune o solutie automatizata end-to-end:
+• Event streaming in timp real - fiecare accesare a unui serviciu electronic SIDISVA (56 servicii prevazute la cap. 3.5) genereaza automat un eveniment Apache Kafka, consumat de pipeline-ul Microsoft SSIS si incarcat in Data Warehouse Microsoft SQL Server Enterprise.
+• Dashboard auditor dedicat in Microsoft Power BI - vizualizare RCR11 pe diverse dimensiuni (perioada, tipuri servicii, demografice utilizatori, demografice zone geografice); autentificare via Keycloak Enterprise cu rol Auditor POCIDIF; export Excel/PDF pentru raportare oficiala.
+• Export automat lunar catre Agentia pentru Digitalizarea Romaniei (ADR) - in format standardizat conform Catalogului Serviciilor Publice (CSP) gestionat de ADR; elimina munca manuala de raportare lunara.
+• Anonimizare automata - pentru raportarea publica catre cetateni, datele sunt anonimizate prin k-anonymity (k>=5) si differential privacy; doar datele agregate sunt publicabile.
+• Trail de audit complet - pentru fiecare conturizare RCR11, log-uri SIEM cu timestamp + sursa evenimentului + tipul serviciului accesat; retentie 5 ani conform cerintei de sustenabilitate POCIDIF.
+Aceste 5 elemente de inovatie au impact direct verificabil asupra:
+• Punctaj P3.1 - element 3 EXCEPTIONAL abordare inovatoare si eficienta (10p).
+• Conformitate DEMO video - cerintele 7 (chatbot AI configurare formulare), 8 (integrari terte), 9 (integrare GIS cu metadate locatie), 10 (lucru offline), 11 (dosare relationate).
+• Indicator de sustenabilitate POCIDIF - RCR11 raportare automatizata reduce riscul de auditat din partea Comisiei Europene in perioada de sustenabilitate.
