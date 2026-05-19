@@ -1,0 +1,121 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="i3YuCYkmHeIejnm8fKYi">
+    <mxGraphModel dx="1212" dy="732" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="826" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="boundary" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;verticalAlign=top;fontSize=14;fontStyle=1" value="Sistem Management Concedii" vertex="1">
+          <mxGeometry height="700" width="560" x="280" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="actorEmployee" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;html=1;outlineConnect=0;fontSize=12" value="Angajat" vertex="1">
+          <mxGeometry height="80" width="40" x="100" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="actorManager" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;html=1;outlineConnect=0;fontSize=12" value="Manager direct" vertex="1">
+          <mxGeometry height="80" width="40" x="100" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="actorHR" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;html=1;outlineConnect=0;fontSize=12" value="HR" vertex="1">
+          <mxGeometry height="80" width="40" x="100" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="actorEmail" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;html=1;outlineConnect=0;fontSize=12" value="Sistem Email" vertex="1">
+          <mxGeometry height="80" width="40" x="950" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="ucLogin" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12" value="Autentificare" vertex="1">
+          <mxGeometry height="50" width="160" x="360" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ucCheckDays" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12" value="Verificare zile&#xa;disponibile" vertex="1">
+          <mxGeometry height="60" width="160" x="360" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="ucSubmit" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1" value="Depunere cerere&#xa;concediu" vertex="1">
+          <mxGeometry height="60" width="160" x="360" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="ucModify" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12" value="Modificare cerere" vertex="1">
+          <mxGeometry height="50" width="160" x="600" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="ucCancel" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12" value="Anulare cerere" vertex="1">
+          <mxGeometry height="50" width="160" x="600" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="ucHistory" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12" value="Vizualizare istoric&#xa;cereri" vertex="1">
+          <mxGeometry height="60" width="160" x="600" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="ucApprove" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1" value="Aprobare /&#xa;Respingere cerere" vertex="1">
+          <mxGeometry height="60" width="160" x="360" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="ucClarify" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12" value="Solicitare clarificări" vertex="1">
+          <mxGeometry height="50" width="160" x="600" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="ucTeamView" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12" value="Vizualizare calendar&#xa;echipă" vertex="1">
+          <mxGeometry height="60" width="160" x="600" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="ucValidateHR" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1" value="Validare finală&#xa;și înregistrare pontaj" vertex="1">
+          <mxGeometry height="60" width="160" x="360" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="ucReports" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12" value="Generare rapoarte&#xa;concedii" vertex="1">
+          <mxGeometry height="60" width="160" x="600" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="ucNotify" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12" value="Trimitere&#xa;notificări email" vertex="1">
+          <mxGeometry height="60" width="160" x="600" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="actorEmployee" style="endArrow=none;html=1;strokeColor=#000000;" target="ucLogin">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="actorEmployee" style="endArrow=none;html=1;strokeColor=#000000;" target="ucCheckDays">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="actorEmployee" style="endArrow=none;html=1;strokeColor=#000000;" target="ucSubmit">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="actorEmployee" style="endArrow=none;html=1;strokeColor=#000000;" target="ucHistory">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="actorManager" style="endArrow=none;html=1;strokeColor=#000000;" target="ucApprove">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="actorManager" style="endArrow=none;html=1;strokeColor=#000000;" target="ucTeamView">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="actorManager" style="endArrow=none;html=1;strokeColor=#000000;" target="ucLogin">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="actorHR" style="endArrow=none;html=1;strokeColor=#000000;" target="ucValidateHR">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="actorHR" style="endArrow=none;html=1;strokeColor=#000000;" target="ucReports">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="actorHR" style="endArrow=none;html=1;strokeColor=#000000;" target="ucLogin">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="ucNotify" style="endArrow=none;html=1;strokeColor=#000000;" target="actorEmail">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="inc1" edge="1" parent="1" source="ucSubmit" style="endArrow=open;endFill=0;html=1;dashed=1;strokeColor=#000000;fontSize=10;fontStyle=2" target="ucCheckDays" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="inc2" edge="1" parent="1" source="ucSubmit" style="endArrow=open;endFill=0;html=1;dashed=1;strokeColor=#000000;fontSize=10;fontStyle=2" target="ucLogin" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="inc3" edge="1" parent="1" source="ucApprove" style="endArrow=open;endFill=0;html=1;dashed=1;strokeColor=#000000;fontSize=10;fontStyle=2" target="ucNotify" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="inc4" edge="1" parent="1" source="ucSubmit" style="endArrow=open;endFill=0;html=1;dashed=1;strokeColor=#000000;fontSize=10;fontStyle=2" target="ucNotify" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="inc5" edge="1" parent="1" source="ucValidateHR" style="endArrow=open;endFill=0;html=1;dashed=1;strokeColor=#000000;fontSize=10;fontStyle=2" target="ucNotify" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ext1" edge="1" parent="1" source="ucModify" style="endArrow=open;endFill=0;html=1;dashed=1;strokeColor=#000000;fontSize=10;fontStyle=2" target="ucSubmit" value="«extend»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ext2" edge="1" parent="1" source="ucCancel" style="endArrow=open;endFill=0;html=1;dashed=1;strokeColor=#000000;fontSize=10;fontStyle=2" target="ucSubmit" value="«extend»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ext3" edge="1" parent="1" source="ucClarify" style="endArrow=open;endFill=0;html=1;dashed=1;strokeColor=#000000;fontSize=10;fontStyle=2" target="ucApprove" value="«extend»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" parent="1" style="text;html=1;strokeColor=#000000;fillColor=#f5f5f5;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;spacingLeft=8;spacingTop=8" value="Legendă:&#xa;━━ Asociere (actor - use case)&#xa;┄┄&gt; «include» - obligatoriu&#xa;┄┄&gt; «extend» - opțional&#xa;&#xa;🟢 Verde = use case principal&#xa;🔵 Albastru = use case secundar&#xa;🟡 Galben = interacțiune sistem extern" vertex="1">
+          <mxGeometry height="160" width="280" x="870" y="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
