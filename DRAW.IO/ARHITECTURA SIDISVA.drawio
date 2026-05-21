@@ -1,9 +1,266 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="QM0-HRKsNiTKrBB5RqXP">
-    <mxGraphModel dx="1030" dy="646" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1471" dy="923" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="TITLE" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=16;fontStyle=1;fontColor=#1a1a2e;" value="SIDISVA — Arhitectura Sistemului Informatic&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="1660" x="20" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="LEG_BG" parent="1" style="rounded=1;fillColor=#ffffff;strokeColor=#cccccc;fontSize=10;" value="" vertex="1">
+          <mxGeometry height="170" width="190" x="1490" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="LEG_T" parent="1" style="text;html=1;fontStyle=1;fontSize=10;fillColor=none;strokeColor=none;" value="LEGENDA" vertex="1">
+          <mxGeometry height="20" width="80" x="1555" y="75" as="geometry" />
+        </mxCell>
+        <mxCell id="LEG1" parent="1" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=9;" value="Utilizatori" vertex="1">
+          <mxGeometry height="20" width="170" x="1500" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="LEG2" parent="1" style="rounded=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=9;" value="Securitate &amp; Acces" vertex="1">
+          <mxGeometry height="20" width="170" x="1500" y="127" as="geometry" />
+        </mxCell>
+        <mxCell id="LEG3" parent="1" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=9;" value="Portal &amp; Aplicatii Mobile" vertex="1">
+          <mxGeometry height="20" width="170" x="1500" y="154" as="geometry" />
+        </mxCell>
+        <mxCell id="LEG4" parent="1" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=9;" value="Aplicatii Core" vertex="1">
+          <mxGeometry height="20" width="170" x="1500" y="181" as="geometry" />
+        </mxCell>
+        <mxCell id="LEG5" parent="1" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=9;" value="Integrari Externe" vertex="1">
+          <mxGeometry height="20" width="170" x="1500" y="208" as="geometry" />
+        </mxCell>
+        <mxCell id="L1_INT" parent="1" style="rounded=1;arcSize=4;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=1;verticalAlign=top;align=left;spacingLeft=10;spacingTop=5;opacity=70;" value="Utilizatori Interni" vertex="1">
+          <mxGeometry height="130" width="800" x="20" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="L1_EXT" parent="1" style="rounded=1;arcSize=4;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;fontStyle=1;verticalAlign=top;align=left;spacingLeft=10;spacingTop=5;opacity=70;" value="Utilizatori Externi / Beneficiari Servicii" vertex="1">
+          <mxGeometry height="130" width="630" x="840" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="U1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;fontStyle=1;" value="Angajati ANSVSA / DSVSA" vertex="1">
+          <mxGeometry height="65" width="185" x="40" y="115" as="geometry" />
+        </mxCell>
+        <mxCell id="U2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" value="Personal Frontiera" vertex="1">
+          <mxGeometry height="65" width="165" x="245" y="115" as="geometry" />
+        </mxCell>
+        <mxCell id="U3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" value="Institute Nationale&#xa;(IDSA, IISPV etc.)" vertex="1">
+          <mxGeometry height="65" width="165" x="430" y="115" as="geometry" />
+        </mxCell>
+        <mxCell id="U4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" value="Personal Laboratoare" vertex="1">
+          <mxGeometry height="65" width="165" x="615" y="115" as="geometry" />
+        </mxCell>
+        <mxCell id="U5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" value="Cetateni" vertex="1">
+          <mxGeometry height="65" width="140" x="860" y="115" as="geometry" />
+        </mxCell>
+        <mxCell id="U6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" value="Societati Comerciale" vertex="1">
+          <mxGeometry height="65" width="150" x="1020" y="115" as="geometry" />
+        </mxCell>
+        <mxCell id="U7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" value="Medici Veterinari" vertex="1">
+          <mxGeometry height="65" width="145" x="1190" y="115" as="geometry" />
+        </mxCell>
+        <mxCell id="U8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" value="Operatori Economici" vertex="1">
+          <mxGeometry height="65" width="100" x="1355" y="115" as="geometry" />
+        </mxCell>
+        <mxCell id="A01" edge="1" parent="1" source="L1_INT" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#6c8ebf;strokeWidth=2;endArrow=block;endFill=1;" target="L2_SEC">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A02" edge="1" parent="1" source="L1_EXT" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#b85450;strokeWidth=2;endArrow=block;endFill=1;" target="L2_IAM">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="L2_SEC" parent="1" style="rounded=1;arcSize=4;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=12;fontStyle=1;verticalAlign=top;align=left;spacingLeft=10;spacingTop=5;opacity=80;" value="Securitate Perimetru" vertex="1">
+          <mxGeometry height="120" width="800" x="20" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="L2_IAM" parent="1" style="rounded=1;arcSize=4;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=12;fontStyle=1;verticalAlign=top;align=left;spacingLeft=10;spacingTop=5;opacity=80;" value="Identitate &amp; Acces (IAM / SSO)" vertex="1">
+          <mxGeometry height="120" width="630" x="840" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="S1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=11;fontStyle=1;" value="Firewall&#xa;(Next-Gen)" vertex="1">
+          <mxGeometry height="55" width="135" x="40" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="S2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=11;" value="WAF&#xa;(Web App Firewall)" vertex="1">
+          <mxGeometry height="55" width="150" x="190" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="S3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=11;" value="IDS / IPS" vertex="1">
+          <mxGeometry height="55" width="120" x="360" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="S4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=11;" value="VPN / DMZ" vertex="1">
+          <mxGeometry height="55" width="120" x="500" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="S5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=11;" value="DDoS Protection&#xa;/ Anti-SPAM" vertex="1">
+          <mxGeometry height="55" width="155" x="640" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="S6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=11;fontStyle=1;" value="Single Sign On (SSO)&#xa;ROeID / LDAP / AD" vertex="1">
+          <mxGeometry height="55" width="195" x="860" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="S7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=11;" value="MFA / 2FA" vertex="1">
+          <mxGeometry height="55" width="120" x="1075" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="S8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=11;" value="RBAC / ABAC&#xa;(Control Acces)" vertex="1">
+          <mxGeometry height="55" width="145" x="1215" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="S9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=11;" value="PKI / Semnatura&#xa;Electronica" vertex="1">
+          <mxGeometry height="55" width="145" x="1375" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="A03" edge="1" parent="1" source="L2_SEC" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#d6b656;strokeWidth=2;endArrow=block;endFill=1;" target="L3_INT">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A04" edge="1" parent="1" source="L2_IAM" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#d6b656;strokeWidth=2;endArrow=block;endFill=1;" target="L3_PUB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="L3_INT" parent="1" style="rounded=1;arcSize=4;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1;verticalAlign=top;align=left;spacingLeft=10;spacingTop=5;opacity=80;" value="Portal Servicii Interne" vertex="1">
+          <mxGeometry height="165" width="800" x="20" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="L3_PUB" parent="1" style="rounded=1;arcSize=4;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1;verticalAlign=top;align=left;spacingLeft=10;spacingTop=5;opacity=80;" value="Portal Servicii Publice &amp; Aplicatii Mobile" vertex="1">
+          <mxGeometry height="165" width="630" x="840" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="P1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontStyle=1;" value="Dashboard Intern&#xa;ANSVSA / DSVSA" vertex="1">
+          <mxGeometry height="95" width="170" x="40" y="415" as="geometry" />
+        </mxCell>
+        <mxCell id="P2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" value="Modul Frontiera&#xa;&amp; Inspectie Sanitara&#xa;Veterinara" vertex="1">
+          <mxGeometry height="95" width="160" x="230" y="415" as="geometry" />
+        </mxCell>
+        <mxCell id="P3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" value="Rapoarte &amp; Sinteze&#xa;(BI Dashboard intern)" vertex="1">
+          <mxGeometry height="95" width="160" x="410" y="415" as="geometry" />
+        </mxCell>
+        <mxCell id="P4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" value="Admin &amp; Configurare&#xa;Sistem" vertex="1">
+          <mxGeometry height="95" width="160" x="590" y="415" as="geometry" />
+        </mxCell>
+        <mxCell id="P5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontStyle=1;" value="Portal Servicii Publice&#xa;(Cetateni, Soc.Com.,&#xa;Medici Veterinari)&#xa;— 3.4.2.6 CDS —" vertex="1">
+          <mxGeometry height="95" width="180" x="860" y="415" as="geometry" />
+        </mxCell>
+        <mxCell id="P6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" value="BND-SNIIA Portal&#xa;(Identificare &amp; Inreg.&#xa;Animale)" vertex="1">
+          <mxGeometry height="95" width="160" x="1060" y="415" as="geometry" />
+        </mxCell>
+        <mxCell id="P7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" value="Autorizare /&#xa;Acreditare Portal" vertex="1">
+          <mxGeometry height="95" width="120" x="1240" y="415" as="geometry" />
+        </mxCell>
+        <mxCell id="P8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontStyle=1;" value="App Mobila&#xa;Autorizare /&#xa;Acreditare" vertex="1">
+          <mxGeometry height="95" width="110" x="1380" y="415" as="geometry" />
+        </mxCell>
+        <mxCell id="A05" edge="1" parent="1" source="L3_INT" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#82b366;strokeWidth=2;endArrow=block;endFill=1;" target="L4_CORE">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A06" edge="1" parent="1" source="L3_PUB" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#82b366;strokeWidth=2;endArrow=block;endFill=1;" target="L4_CORE">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="L4_CORE" parent="1" style="rounded=1;arcSize=3;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;fontStyle=1;verticalAlign=top;align=left;spacingLeft=10;spacingTop=5;opacity=80;" value="Aplicatii Core SIDISVA — VOGO ENTERPRISE BUSINESS SUITE" vertex="1">
+          <mxGeometry height="185" width="1450" x="20" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="C1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;fontStyle=1;" value="LIMS&#xa;(Lab Info Mgmt Sys)&#xa;+ Intercomparare&#xa;+ Instruire Personal Lab" vertex="1">
+          <mxGeometry height="110" width="215" x="40" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="C2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;fontStyle=1;" value="DMS&#xa;(Document&#xa;Management&#xa;System)" vertex="1">
+          <mxGeometry height="110" width="175" x="275" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="C3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;fontStyle=1;" value="GIS&#xa;(Geographic&#xa;Information&#xa;System)" vertex="1">
+          <mxGeometry height="110" width="175" x="470" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="C4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;fontStyle=1;" value="ETL / BI&#xa;Raportare, Dashboard,&#xa;Sinteze, Culegere Date&#xa;— 3.4.2.5 CDS —" vertex="1">
+          <mxGeometry height="110" width="215" x="665" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="C5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;fontStyle=1;" value="BND-SNIIA&#xa;(Sistem National&#xa;Identificare &amp;&#xa;Inregistrare Animale)" vertex="1">
+          <mxGeometry height="110" width="195" x="900" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="C6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;" value="Modul Autorizare&#xa;&amp; Acreditare&#xa;(Lab, Operatori,&#xa;Medici Vet)" vertex="1">
+          <mxGeometry height="110" width="175" x="1115" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="C7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;" value="Alte Module&#xa;Portal / Functio-&#xa;nalitati Specifice" vertex="1">
+          <mxGeometry height="110" width="140" x="1310" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="A07" edge="1" parent="1" source="L4_CORE" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#9673a6;strokeWidth=2;endArrow=block;endFill=1;" target="L5_INT">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A08" edge="1" parent="1" source="L4_CORE" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#9673a6;strokeWidth=2;endArrow=block;endFill=1;" target="L6_DB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="L5_INT" parent="1" style="rounded=1;arcSize=3;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;fontStyle=1;verticalAlign=top;align=left;spacingLeft=10;spacingTop=5;opacity=90;" value="Integrari Externe (API Gateway / Webservices / ESB)" vertex="1">
+          <mxGeometry height="130" width="1450" x="20" y="770" as="geometry" />
+        </mxCell>
+        <mxCell id="I1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;fontStyle=1;" value="ROeID&#xa;(Identitate&#xa;Digitala)" vertex="1">
+          <mxGeometry height="65" width="130" x="40" y="815" as="geometry" />
+        </mxCell>
+        <mxCell id="I2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" value="PNI&#xa;(Punct National&#xa;de Notificare)" vertex="1">
+          <mxGeometry height="65" width="130" x="185" y="815" as="geometry" />
+        </mxCell>
+        <mxCell id="I3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" value="PCUe&#xa;(Punct Contact&#xa;Unic electronic)" vertex="1">
+          <mxGeometry height="65" width="130" x="330" y="815" as="geometry" />
+        </mxCell>
+        <mxCell id="I4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" value="ONRC&#xa;(Registrul&#xa;Comertului)" vertex="1">
+          <mxGeometry height="65" width="130" x="475" y="815" as="geometry" />
+        </mxCell>
+        <mxCell id="I5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" value="APIA&#xa;(Plati in&#xa;Agricultura)" vertex="1">
+          <mxGeometry height="65" width="130" x="620" y="815" as="geometry" />
+        </mxCell>
+        <mxCell id="I6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" value="ANCPI&#xa;(Cadastru &amp;&#xa;Publicitate Im.)" vertex="1">
+          <mxGeometry height="65" width="130" x="765" y="815" as="geometry" />
+        </mxCell>
+        <mxCell id="I7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" value="ANARZ&#xa;(Rase Animale&#xa;Romania)" vertex="1">
+          <mxGeometry height="65" width="130" x="910" y="815" as="geometry" />
+        </mxCell>
+        <mxCell id="I8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" value="Colegiul Medicilor&#xa;Veterinari" vertex="1">
+          <mxGeometry height="65" width="130" x="1055" y="815" as="geometry" />
+        </mxCell>
+        <mxCell id="I9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" value="e-Romania /&#xa;PNSI / GHISEUL.RO" vertex="1">
+          <mxGeometry height="65" width="130" x="1200" y="815" as="geometry" />
+        </mxCell>
+        <mxCell id="I10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" value="Alte Sisteme&#xa;Externe" vertex="1">
+          <mxGeometry height="65" width="105" x="1345" y="815" as="geometry" />
+        </mxCell>
+        <mxCell id="A09" edge="1" parent="1" source="L5_INT" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#d6b656;strokeWidth=1;endArrow=open;endFill=0;dashed=1;" target="L6_DB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="L6_DB" parent="1" style="rounded=1;arcSize=3;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=1;verticalAlign=top;align=left;spacingLeft=10;spacingTop=5;opacity=80;" value="Strat Date (Data Layer)" vertex="1">
+          <mxGeometry height="120" width="1450" x="20" y="925" as="geometry" />
+        </mxCell>
+        <mxCell id="D1" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontStyle=1;" value="SQL Server&#xa;(Date Structurate&#xa;— nivel DB ofertat)" vertex="1">
+          <mxGeometry height="65" width="280" x="40" y="960" as="geometry" />
+        </mxCell>
+        <mxCell id="D2" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" value="Document Store&#xa;(DMS / Arhiva&#xa;Electronica)" vertex="1">
+          <mxGeometry height="65" width="280" x="340" y="960" as="geometry" />
+        </mxCell>
+        <mxCell id="D3" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" value="GIS Geodatabase&#xa;(Date Spatiale)" vertex="1">
+          <mxGeometry height="65" width="260" x="640" y="960" as="geometry" />
+        </mxCell>
+        <mxCell id="D4" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" value="Data Warehouse&#xa;(BI / Raportare)" vertex="1">
+          <mxGeometry height="65" width="260" x="920" y="960" as="geometry" />
+        </mxCell>
+        <mxCell id="D5" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" value="Backup &amp; Replicare&#xa;Date (Cloud Gov)" vertex="1">
+          <mxGeometry height="65" width="250" x="1200" y="960" as="geometry" />
+        </mxCell>
+        <mxCell id="A10" edge="1" parent="1" source="L6_DB" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#6c8ebf;strokeWidth=2;endArrow=block;endFill=1;" target="L7_INFRA">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="L7_INFRA" parent="1" style="rounded=1;arcSize=3;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;fontStyle=1;verticalAlign=top;align=left;spacingLeft=10;spacingTop=5;fontColor=#333333;" value="Infrastructura Cloud Guvernamental" vertex="1">
+          <mxGeometry height="155" width="1450" x="20" y="1070" as="geometry" />
+        </mxCell>
+        <mxCell id="H1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;fontStyle=1;" value="Servere Aplicatie&#xa;&amp; Web&#xa;(Cloud Gov)" vertex="1">
+          <mxGeometry height="85" width="230" x="40" y="1115" as="geometry" />
+        </mxCell>
+        <mxCell id="H2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" value="Storage&#xa;(SAN / NAS /&#xa;Object Storage)" vertex="1">
+          <mxGeometry height="85" width="220" x="290" y="1115" as="geometry" />
+        </mxCell>
+        <mxCell id="H3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" value="Retelistica&#xa;(LAN / WAN /&#xa;SDN)" vertex="1">
+          <mxGeometry height="85" width="220" x="530" y="1115" as="geometry" />
+        </mxCell>
+        <mxCell id="H4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" value="Cloud Guvernamental&#xa;(Virtualizare /&#xa;Containere / K8s)" vertex="1">
+          <mxGeometry height="85" width="240" x="770" y="1115" as="geometry" />
+        </mxCell>
+        <mxCell id="H5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" value="Backup Cloud Gov&#xa;(DR / BCP /&#xa;RPO &lt; 1h / RTO &lt; 4h)" vertex="1">
+          <mxGeometry height="85" width="230" x="1030" y="1115" as="geometry" />
+        </mxCell>
+        <mxCell id="H6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" value="SIEM / SOC&#xa;(Monitorizare&#xa;Securitate)" vertex="1">
+          <mxGeometry height="85" width="170" x="1280" y="1115" as="geometry" />
+        </mxCell>
+        <mxCell id="FLUX_LBL" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=9;fontStyle=1;rotation=-90;fontColor=#666666;" value="FLUX DATE / CONTROL" vertex="1">
+          <mxGeometry height="30" width="160" x="1480" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="FLUX_ARR" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#666666;strokeWidth=1;dashed=1;endArrow=open;endFill=0;startArrow=open;startFill=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1490" y="200" />
+              <mxPoint x="1490" y="1150" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NOTE1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f9f9f9;strokeColor=#999999;fontSize=9;align=left;spacingLeft=6;" value="&lt;b&gt;Nota:&lt;/b&gt; Toate componentele software ruleaza pe&lt;br&gt;infrastructura Cloud Guvernamental (MCID).&lt;br&gt;Baza de date: SQL Server (nivel DB ofertat).&lt;br&gt;Securitate: conformitate ISO 27001 + GDPR." vertex="1">
+          <mxGeometry height="90" width="190" x="1490" y="260" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
